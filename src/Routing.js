@@ -12,7 +12,7 @@ const Routing = () => {
       id: 1,
     },
     {
-      link: "/home",
+      link: "/",
       element: <HomePage />,
       id: 2,
     },
