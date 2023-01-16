@@ -1,7 +1,12 @@
 import React from "react";
+import Routing from "./Routing";
 
 const App = () => {
-  return <div>App xxAdikk</div>;
+  return (
+    <>
+      <Routing />
+    </>
+  );
 };
 
 export default App;
