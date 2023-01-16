@@ -1,8 +1,20 @@
+*{
+    font-family: 'Cinzel', serif !important;
+}
+
+#appbar {
+    background-color:rgb(90, 26, 150);
+    border-radius: 10px;
+}
+
 #block__link:hover{
     border-radius: 10px;
+    transition: 600ms;
 }
 
 #link {
     text-decoration: none;
     color: white;
 }
+
+

@@ -12,34 +12,37 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import "../Navbar/Navbar.css"
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import HomeIcon from '@mui/icons-material/Home';
 import StorefrontIcon from '@mui/icons-material/Storefront';
 import InfoIcon from '@mui/icons-material/Info';
 
-const pages = [
-    {
-        name: "Главная",
-        link: "/",
-        icon: <HomeIcon sx={{height: "15px", width: "15px"}}/>,
-        id: 1
-    },
-    {
-        name: "Рестораны",
-        link: "/about",
-        icon: <StorefrontIcon sx={{height: "15px", width: "15px"}}/>,
-        id: 2
-    },
-    {
-        name: "О нас",
-        link: "/about",
-        icon: <InfoIcon sx={{height: "15px", width: "15px"}}/>,
-        id: 3
-    }
-];
 const settings = ['Logout',"Register"];
 
 function Navbar() {
+
+  const navigate = useNavigate()
+
+  const pages = [
+      {
+          name: "Главная",
+          link: "/",
+          icon: <HomeIcon  onClick={()=>navigate("/")} sx={{height: "15px", width: "15px", marginLeft: '5px'}}/>,
+          id: 1
+      },
+      {
+          name: "Рестораны",
+          link: "/restaurants",
+          icon: <StorefrontIcon  onClick={()=>navigate("/restaurants")} sx={{height: "15px", width: "15px", marginLeft: '5px'}}/>,
+          id: 2
+      },
+      {
+          name: "О нас",
+          link: "/about",
+          icon: <InfoIcon  onClick={()=>navigate("/about")} sx={{height: "15px", width: "15px", marginLeft: '5px'}}/>,
+          id: 3
+      }
+  ];
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -59,8 +62,9 @@ function Navbar() {
   };
 
   return (
-    <AppBar position="static">
-      <Container maxWidth="xl">
+    <Box sx ={{marginTop: "81px"}}>
+    <AppBar id="appbar" position="fixed" sx={{width: "95%", right: '2%', top: '9px'}}>
+      <Container maxWidth="xl" >
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Typography
@@ -111,8 +115,8 @@ function Navbar() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem onClick={handleCloseNavMenu}>
-                  <Link to={page.link} key={page.id}>{page.name}</Link>
+                <MenuItem onClick={handleCloseNavMenu} id = "burger-link">
+                  <Link to={page.link} key={page.id} style={{textDecoration: "none", color: "black"}}>{page.name}</Link> {page.icon}
                   </MenuItem>
                   ))}
             </Menu>
@@ -136,12 +140,12 @@ function Navbar() {
           >
             LOGO
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', justifyContent: "center", gap: "0 50px", marginRight: "10%" }
         
         }}>
               {pages.map((page) => (<>
           <MenuItem onClick={handleCloseNavMenu}  id="block__link">
-                  <Link id='link' to={page.link} key={page.id}>{page.name}</Link>
+                  <Link id='link' to={page.link} key={page.id} style ={{width: "100%", height: "100%"}}>{page.name}</Link>
                   {page.icon}
                   </MenuItem>
                   </>
@@ -180,6 +184,7 @@ function Navbar() {
         </Toolbar>
       </Container>
     </AppBar>
+    </Box>
   );
 }
 export default Navbar;
