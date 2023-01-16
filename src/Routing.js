@@ -2,9 +2,16 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import AboutUs from "./components/pages/AboutUs";
 import HomePage from "./components/pages/HomePage";
+import RestaurantsPage from "./components/pages/RestaurantsPage";
 
 const Routing = () => {
-  const PRIVAT_PAGES = [];
+  const PRIVAT_PAGES = [
+    {
+      link: "/restaurants",
+      element: <RestaurantsPage />,
+      id: 1,
+    },
+  ];
   const PUBLIC_PAGES = [
     {
       link: "/about",
@@ -17,10 +24,14 @@ const Routing = () => {
       id: 2,
     },
   ];
+
   return (
     <Routes>
       {PUBLIC_PAGES.map((page) => (
         <Route path={page.link} key={page.id} element={page.element} />
+      ))}
+      {PRIVAT_PAGES.map((pr_page) => (
+        <Route path={pr_page.link} key={pr_page.id} element={pr_page.element} />
       ))}
     </Routes>
   );
