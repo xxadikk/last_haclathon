@@ -23,7 +23,7 @@ const images = [
   {
     label: "Bali, Indonesia",
     imgPath:
-      "https://slavapozdnyakov.ru/sites/default/files/photo/steik-s-ryabinoi.jpg",
+      "https://slavapozdnyakov.ru/sites/default/files/photo/tort-s-yagodami-cherniki-malini-ezheviki.jpg",
     id: 3,
   },
 ];
@@ -46,7 +46,7 @@ function Home() {
   };
 
   return (
-    <Box sx={{ height: "300px", marginBottom: "400px" }}>
+    <Box sx={{ height: "300px", marginBottom: "300px" }}>
       <Box
         id="homep"
         sx={{ display: "flex", justifyContent: "center", flexWrap: "wrap" }}
