@@ -1,0 +1,36 @@
+.circle {
+  position: fixed;
+  display: none;
+  bottom: 10px;
+  right: 5%;
+  width: 10px;
+  height: 10px;
+  line-height: 75px;
+  border-radius: 50%;
+  font-size: 17px;
+  color: #fff;
+  background: red;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+  vertical-align: middle;
+  box-shadow: 0px 0px 3px #000;
+}
+
+#top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  padding: 0;
+}
+#icon-top {
+  margin-bottom: 10px;
+}
+#top:hover {
+  transition: 1s;
+  background-color: saddlebrown;
+}

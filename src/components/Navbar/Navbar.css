@@ -1,5 +1,6 @@
 *{
     font-family: 'Cinzel', serif !important;
+    /* font-family: Lucida Grande, Lucida Sans Unicode, Lucida Sans, Geneva, Verdana, */
     padding: 0;
     margin: 0;
 }
@@ -21,15 +22,17 @@ background: linear-gradient(90deg, #000000,#230b10,#331016,#230b10,#000000);
 box-shadow: none;
 }
 
-#block__link:hover{
-    border-radius: 10px;
-    transition: 600ms;
+
+
+
+#block__link:hover {
+  border-radius: 10px;
+  transition: 600ms;
 }
 
 #link {
     text-decoration: none;
     color: white;
     font-family: 'Caveat', cursive !important;
+
 }
-
-
