@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "./components/Navbar/Navbar";
+import Top from "./components/Top/Top";
 import Routing from "./Routing";
 
 const App = () => {
@@ -7,6 +8,7 @@ const App = () => {
     <>
       <Navbar />
       <Routing />
+      <Top />
     </>
   );
 };

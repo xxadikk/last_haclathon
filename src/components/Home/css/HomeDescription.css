@@ -1,0 +1,11 @@
+* {
+  font-family: "Cinzel", serif !important;
+}
+.description {
+  background: -webkit-linear-gradient(90deg, #a971f1, #f080af);
+  background: linear-gradient(90deg, #a971f1, #f080af);
+  color: black;
+  margin-top: 50;
+  width: 70%;
+  border-radius: 20;
+}
