@@ -62,9 +62,9 @@ function Navbar() {
   };
 
   return (
-    <Box sx ={{marginTop: "81px"}}>
-    <AppBar id="appbar" position="fixed" sx={{width: "95%", right: '2%', top: '9px'}}>
-      <Container maxWidth="xl" >
+    <Box id = "start-container" sx ={{ width: "100%,", padding:"0"}}>
+    <AppBar id="appbar" position="fixed" sx={{width: "100%", top: '20px'}}>
+      <Container maxWidth="100%" >
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Typography
