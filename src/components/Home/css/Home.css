@@ -1,0 +1,11 @@
+h1 {
+  font-family: "Cinzel", serif !important;
+}
+#homep {
+  object-fit: cover;
+  width: 100%;
+
+  position: fixed;
+  left: 0;
+  z-index: -1;
+}

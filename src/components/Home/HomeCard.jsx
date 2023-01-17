@@ -1,17 +1,20 @@
-import * as React from "react";
+import React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Box, CardActionArea } from "@mui/material";
+import "../Home/css/HomeCard.css";
 
 export default function HomeCard() {
   return (
     <Box
       sx={{
+        padding: "0",
+        margin: "50px 0 0 0",
+        backgroundColor: "white",
         display: "flex",
         justifyContent: "space-evenly",
-        marginTop: "50px",
         gap: "3%",
       }}
     >
@@ -21,6 +24,7 @@ export default function HomeCard() {
           maxWidth: 445,
           display: "flex",
           gap: "50px",
+          borderRadius: "50px 15px",
         }}
       >
         {/* // ! рестораны */}
@@ -34,11 +38,10 @@ export default function HomeCard() {
             image="https://www.tokyo-city.ru/images/restorany/nevskiy71/foto017.jpg"
             alt="рестараны"
           />
-          <Typography gutterBottom variant="h5" component="div">
-            РЕСТАРАНЫ
-          </Typography>
           <CardContent>
-            <Typography variant="body2" color="text.secondary"></Typography>
+            <Typography gutterBottom variant="h5" component="div">
+              РЕСТОРАНЫ
+            </Typography>
           </CardContent>
         </CardActionArea>
       </Card>
@@ -48,6 +51,7 @@ export default function HomeCard() {
           maxWidth: 445,
           display: "flex",
           gap: "50px",
+          borderRadius: "15px 50px",
         }}
       >
         {/* // ! меню */}
@@ -59,11 +63,10 @@ export default function HomeCard() {
             image="https://prof.thebull.ru/wp-content/uploads/sites/10/2022/12/%D0%A2%D0%B0%D1%80%D0%A2%D0%B0%D1%80-28.09-3.jpg"
             alt="меню"
           />
-          <Typography gutterBottom variant="h5" component="div">
-            МЕНЮ
-          </Typography>
           <CardContent>
-            <Typography variant="body2" color="text.secondary"></Typography>
+            <Typography gutterBottom variant="h5" component="div">
+              МЕНЮ
+            </Typography>
           </CardContent>
         </CardActionArea>
       </Card>

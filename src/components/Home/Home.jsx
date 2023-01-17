@@ -3,7 +3,7 @@ import { useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
-import "../Home/Home.css";
+import "../Home/css/Home.css";
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
@@ -11,19 +11,19 @@ const images = [
   {
     label: "San Francisco – Oakland Bay Bridge, United States",
     imgPath:
-      "https://img5.goodfon.ru/wallpaper/nbig/6/ad/miaso-pomidory-razdelochnaia-doska-doski-kusochki-porezannoe.jpg",
+      "https://podacha-blud.com/uploads/posts/2022-10/1665576913_13-podacha-blud-com-p-fud-foto-dlya-restorana-13.jpg",
     id: 1,
   },
   {
     label: "Bird",
     imgPath:
-      "https://img5.goodfon.ru/wallpaper/nbig/b/d4/eda-miaso-spetsii-pomidory-razdelochnaia-doska.jpg",
+      "https://podacha-blud.com/uploads/posts/2022-10/1665576860_8-podacha-blud-com-p-fud-foto-dlya-restorana-8.jpg",
     id: 2,
   },
   {
     label: "Bali, Indonesia",
     imgPath:
-      "https://img5.goodfon.ru/wallpaper/nbig/f/1e/miaso-svinina-spetsii.jpg",
+      "https://slavapozdnyakov.ru/sites/default/files/photo/tort-s-yagodami-cherniki-malini-ezheviki.jpg",
     id: 3,
   },
 ];
@@ -46,50 +46,48 @@ function Home() {
   };
 
   return (
-    <Box>
-      <h1
-        style={{
-          display: "flex",
-          justifyContent: "center",
-        }}
+    <Box sx={{ height: "300px", marginBottom: "300px" }}>
+      <Box
+        id="homep"
+        sx={{ display: "flex", justifyContent: "center", flexWrap: "wrap" }}
       >
-        Добро пожаловать
-      </h1>
-      <Box sx={{ display: "flex", justifyContent: "center" }}>
-        <Box
-          className="maincorus"
-          id="carusel"
-          sx={{
-            maxWidth: "70%",
-            flexGrow: 1,
-          }}
-        >
-          <AutoPlaySwipeableViews
-            className="corusimg"
-            axis={theme.direction === "rtl" ? "x-reverse" : "x"}
-            index={activeStep}
-            onChangeIndex={handleStepChange}
-            enableMouseEvents
-          >
-            {images.map((step, index) => (
-              <div key={step.label}>
-                {Math.abs(activeStep - index) <= 2 ? (
-                  <Box
-                    component="img"
-                    sx={{
-                      display: "block",
-                      maxWidth: "100%",
-                      overflow: "hidden",
-                      width: "100%",
-                      borderRadius: "10px",
-                    }}
-                    src={step.imgPath}
-                    alt={step.label}
-                  />
-                ) : null}
-              </div>
-            ))}
-          </AutoPlaySwipeableViews>
+        <Box sx={{ width: "100%" }}>
+          <Box>
+            <Box
+              className="maincorus"
+              id="carusel"
+              sx={{
+                maxWidth: "100%",
+                flexGrow: 1,
+              }}
+            >
+              <AutoPlaySwipeableViews
+                className="corusimg"
+                axis={theme.direction === "rtl" ? "x-reverse" : "x"}
+                index={activeStep}
+                onChangeIndex={handleStepChange}
+                enableMouseEvents
+              >
+                {images.map((step, index) => (
+                  <div key={step.label}>
+                    {Math.abs(activeStep - index) <= 2 ? (
+                      <Box
+                        component="img"
+                        sx={{
+                          display: "block",
+                          maxWidth: "100%",
+                          overflow: "hidden",
+                          width: "100%",
+                        }}
+                        src={step.imgPath}
+                        alt={step.label}
+                      />
+                    ) : null}
+                  </div>
+                ))}
+              </AutoPlaySwipeableViews>
+            </Box>
+          </Box>
         </Box>
       </Box>
     </Box>
