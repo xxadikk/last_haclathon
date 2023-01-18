@@ -77,7 +77,7 @@ function Navbar() {
 
   return (
     <Box id = "start-container" sx ={{ width: "100%,", padding:"0"}}>
-    <AppBar id="appbar" position="fixed" sx={{width: "100%", top: '20px'}}>
+    <AppBar id="appbar" position="fixed" sx={{width: "100%", top: '15px'}}>
       <Container maxWidth="100%" >
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
