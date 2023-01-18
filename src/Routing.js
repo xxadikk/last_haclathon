@@ -2,6 +2,8 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import AboutUs from "./components/pages/AboutUs";
 import HomePage from "./components/pages/HomePage";
+import Login from "./components/pages/Login";
+import Register from "./components/pages/Register";
 import RestaurantsPage from "./components/pages/RestaurantsPage";
 
 const Routing = () => {
@@ -22,6 +24,16 @@ const Routing = () => {
       link: "/",
       element: <HomePage />,
       id: 2,
+    },
+    {
+      link: "/register",
+      element: <Register />,
+      id: 3,
+    },
+    {
+      link: "/login",
+      element: <Login />,
+      id: 4,
     },
   ];
 
