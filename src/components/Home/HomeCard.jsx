@@ -34,12 +34,12 @@ export default function HomeCard() {
               borderRadius: "15px",
             }}
             component="img"
-            width="100"
+            width="100px"
             image="https://www.tokyo-city.ru/images/restorany/nevskiy71/foto017.jpg"
             alt="рестараны"
           />
           <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
+            <Typography id="rest" gutterBottom variant="h5" component="div">
               РЕСТОРАН
             </Typography>
           </CardContent>
@@ -64,7 +64,7 @@ export default function HomeCard() {
             alt="меню"
           />
           <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
+            <Typography id="men" gutterBottom variant="h5" component="div">
               МЕНЮ
             </Typography>
           </CardContent>
