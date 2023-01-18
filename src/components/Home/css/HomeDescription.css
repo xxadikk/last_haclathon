@@ -1,10 +1,24 @@
 * {
-  font-family: "Cinzel", serif !important;
+  font-family: "Pattaya", sans-serif !important;
 }
 .description {
-  background: -webkit-linear-gradient(90deg, #a971f1, #f080af);
-  background: linear-gradient(90deg, #a971f1, #f080af);
-  color: black;
+  background: -webkit-linear-gradient(
+    198deg,
+    #000000,
+    #230b10,
+    #331016,
+    #230b10,
+    #000000
+  );
+  background: linear-gradient(
+    198deg,
+    #000000,
+    #230b10,
+    #331016,
+    #230b10,
+    #000000
+  );
+  color: white;
   margin-top: 50;
   width: 70%;
   border-radius: 20;

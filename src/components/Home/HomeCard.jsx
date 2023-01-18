@@ -40,7 +40,7 @@ export default function HomeCard() {
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
-              РЕСТОРАНЫ
+              РЕСТОРАН
             </Typography>
           </CardContent>
         </CardActionArea>
