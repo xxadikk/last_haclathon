@@ -15,8 +15,14 @@
     background: -webkit-linear-gradient(90deg, #000000,#230b10,#331016,#230b10,#000000);
 background: linear-gradient(90deg, #000000,#230b10,#331016,#230b10,#000000);
 box-shadow: none;
+padding: 0;
+margin: 0;
 }
 
+#start-container {
+    margin: 0;
+    padding: 0;
+}
 
 
 
@@ -30,5 +36,9 @@ box-shadow: none;
     color: white;
     font-family: 'Caveat', cursive !important;
 
+}
+#register_user{
+    text-decoration: none;
+    color: black;
 }
 
