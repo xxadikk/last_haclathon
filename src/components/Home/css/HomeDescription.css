@@ -23,3 +23,36 @@
   width: 70%;
   border-radius: 20;
 }
+
+/* !adaptivka start */
+
+#rest {
+  font-size: 100%;
+  padding-top: 10px;
+}
+
+#opis {
+  width: 80%;
+  text-align: center;
+  margin: 0 0 10px 0;
+  padding-top: 5px;
+}
+
+/* ? odaptivka end */
+
+@media all and (max-width: 450px) {
+  #rest {
+    font-size: 80%;
+  }
+  #opis {
+    font-size: 70%;
+  }
+}
+@media all and (max-width: 400px) {
+  #rest {
+    font-size: 70%;
+  }
+  #opis {
+    font-size: 60%;
+  }
+}

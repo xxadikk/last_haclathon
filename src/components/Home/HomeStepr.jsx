@@ -61,7 +61,7 @@ export default function HomeSteper() {
                   ) : null
                 }
               >
-                {step.label}
+                <span>{step.label}</span>
               </StepLabel>
               <StepContent>
                 <Typography>{step.description}</Typography>
