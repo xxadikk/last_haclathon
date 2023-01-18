@@ -1,17 +1,18 @@
-*{
-    font-family: 'Cinzel', serif !important;
-    /* font-family: Lucida Grande, Lucida Sans Unicode, Lucida Sans, Geneva, Verdana, */
-    padding: 0;
-    margin: 0;
+
+* {
+  font-family: "Cinzel", serif !important;
+  padding: 0;
+  margin: 0;
 }
 
 
-#appbar:hover{
-    box-shadow: none;
-    transition: 800ms;
+#appbar:hover {
+  box-shadow: none;
+  transition: 800ms;
 }
 
 #appbar {
+
     background: -webkit-linear-gradient(90deg, #000000,#230b10,#331016,#230b10,#000000);
 background: linear-gradient(90deg, #000000,#230b10,#331016,#230b10,#000000);
 box-shadow: none;
@@ -26,16 +27,16 @@ margin: 0;
 
 
 
+
 #block__link:hover {
   border-radius: 10px;
   transition: 600ms;
 }
 
 #link {
-    text-decoration: none;
-    color: white;
-    font-family: 'Caveat', cursive !important;
-
+  text-decoration: none;
+  color: white;
+  font-family: "Caveat", cursive !important;
 }
 #register_user{
     text-decoration: none;

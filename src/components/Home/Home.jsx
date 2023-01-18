@@ -46,7 +46,7 @@ function Home() {
   };
 
   return (
-    <Box sx={{ height: "300px", marginBottom: "300px" }}>
+    <Box>
       <Box
         id="homep"
         sx={{ display: "flex", justifyContent: "center", flexWrap: "wrap" }}
@@ -72,6 +72,7 @@ function Home() {
                   <div key={step.label}>
                     {Math.abs(activeStep - index) <= 2 ? (
                       <Box
+                        id="photo"
                         component="img"
                         sx={{
                           display: "block",

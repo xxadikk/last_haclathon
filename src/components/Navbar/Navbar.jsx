@@ -75,6 +75,7 @@ function Navbar() {
   };
 
   return (
+
     <Box id = "start-container" sx ={{ width: "100%,", padding:"0",}}>
     <AppBar id="appbar" position="fixed" sx={{width: "100%",}}>
       <Container maxWidth="100%" >
@@ -97,6 +98,7 @@ function Navbar() {
           >
             LOGO
           </Typography>
+
 
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
               <IconButton
