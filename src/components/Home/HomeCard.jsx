@@ -22,8 +22,6 @@ export default function HomeCard() {
         sx={{
           textAlign: "center",
           maxWidth: 445,
-          display: "flex",
-          gap: "50px",
           borderRadius: "50px 15px",
         }}
       >
@@ -49,8 +47,6 @@ export default function HomeCard() {
         sx={{
           textAlign: "center",
           maxWidth: 445,
-          display: "flex",
-          gap: "50px",
           borderRadius: "15px 50px",
         }}
       >
