@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Navbar/Navbar";
 import Top from "./components/Top/Top";
 import Routing from "./Routing";
@@ -8,6 +9,7 @@ const App = () => {
     <>
       <Navbar />
       <Routing />
+      <Footer/>
       <Top />
     </>
   );
