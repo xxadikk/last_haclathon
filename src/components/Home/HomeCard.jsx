@@ -37,7 +37,7 @@ export default function HomeCard() {
             alt="рестараны"
           />
           <CardContent>
-            <Typography id="rest" gutterBottom variant="h5" component="div">
+            <Typography id="rests" gutterBottom variant="h5" component="div">
               РЕСТОРАН
             </Typography>
           </CardContent>
@@ -60,7 +60,7 @@ export default function HomeCard() {
             alt="меню"
           />
           <CardContent>
-            <Typography id="men" gutterBottom variant="h5" component="div">
+            <Typography id="rests" gutterBottom variant="h5" component="div">
               МЕНЮ
             </Typography>
           </CardContent>

@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Restaurants = () => {
+const SideBar = () => {
     return (
         <div>
-          
+      
         </div>
     );
 };
 
-export default Restaurants;
+export default SideBar;

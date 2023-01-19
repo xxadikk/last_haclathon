@@ -7,6 +7,8 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
+import Avatar from "@mui/material/Avatar";
+import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import "../Navbar/Navbar.css";
@@ -14,13 +16,11 @@ import { Link, useNavigate } from "react-router-dom";
 import HomeIcon from "@mui/icons-material/Home";
 import StorefrontIcon from "@mui/icons-material/Storefront";
 import InfoIcon from "@mui/icons-material/Info";
-
 import MenuRegister from "./MenuRegister/MenuRegister";
-
 
 function Navbar() {
   const navigate = useNavigate();
-  
+
   const pages = [
     {
       name: "Главная",
@@ -75,30 +75,28 @@ function Navbar() {
   };
 
   return (
-
-    <Box id = "start-container" sx ={{ width: "100%,", padding:"0",}}>
-    <AppBar id="appbar" position="fixed" sx={{width: "100%",}}>
-      <Container maxWidth="100%" >
-        <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            LOGO
-          </Typography>
-
+    <Box id="start-container" sx={{ width: "100%", padding: "0" }}>
+      <AppBar id="appbar" position="fixed" sx={{ width: "100%" }}>
+        <Container maxWidth="100%">
+          <Toolbar disableGutters>
+            <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+            <Typography
+              variant="h6"
+              noWrap
+              component="a"
+              href="/"
+              sx={{
+                mr: 2,
+                display: { xs: "none", md: "flex" },
+                fontFamily: "monospace",
+                fontWeight: 700,
+                letterSpacing: ".3rem",
+                color: "inherit",
+                textDecoration: "none",
+              }}
+            >
+              LOGO
+            </Typography>
 
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
               <IconButton
@@ -190,7 +188,7 @@ function Navbar() {
                 </>
               ))}
             </Box>
-            <MenuRegister/>
+            <MenuRegister />
           </Toolbar>
         </Container>
       </AppBar>
