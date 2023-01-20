@@ -16,7 +16,7 @@ const AboutUs = () => {
   return (
     <div>
       <div>
-        <Box sx={{ backgroundColor: "#bfdb8e" }}>
+        <Box id="abo">
           <Box
             sx={{
               display: "flex",

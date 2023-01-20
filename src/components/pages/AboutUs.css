@@ -1,7 +1,10 @@
 #images {
   display: flex;
 }
-
+#abo {
+  background: -webkit-linear-gradient(171deg, #121212, #181818);
+  background: linear-gradient(171deg, #121212, #181818);
+}
 @media all and (max-width: 768px) {
   #tap1 {
     font-size: 80%;
@@ -34,4 +37,13 @@
   #tap3 {
     font-size: 50%;
   }
+}
+#tap1 {
+  color: white;
+}
+#tap2 {
+  color: white;
+}
+#tap3 {
+  color: white;
 }

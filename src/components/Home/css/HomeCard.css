@@ -3,7 +3,8 @@
   padding: 0;
 }
 #alfa {
-  background-color: #bfdb8e;
+  background: -webkit-linear-gradient(171deg, #121212, #181818);
+  background: linear-gradient(171deg, #121212, #181818);
   padding: 20px 0 0 0;
 }
 
@@ -12,8 +13,7 @@
   color: white;
 }
 .fon {
-  background: -webkit-linear-gradient(171deg, #121212, #181818);
-  background: linear-gradient(171deg, #121212, #181818);
+  background-color: #7a0c0c;
 }
 
 @media all and (max-width: 500px) {
