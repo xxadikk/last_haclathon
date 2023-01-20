@@ -3,12 +3,17 @@
   padding: 0;
 }
 #alfa {
-  background-color: white;
+  background-color: #bfdb8e;
   padding: 20px 0 0 0;
 }
 
 #rests {
   font-size: 200%;
+  color: white;
+}
+.fon {
+  background: -webkit-linear-gradient(171deg, #121212, #181818);
+  background: linear-gradient(171deg, #121212, #181818);
 }
 
 @media all and (max-width: 500px) {

@@ -9,10 +9,10 @@ import "../Home/css/HomeCard.css";
 export default function HomeCard() {
   return (
     <Box
+      id="cards"
       sx={{
         padding: "0",
         margin: "50px 0 0 0",
-        backgroundColor: "white",
         display: "flex",
         justifyContent: "space-evenly",
         gap: "3%",
@@ -22,21 +22,18 @@ export default function HomeCard() {
         sx={{
           textAlign: "center",
           maxWidth: 445,
-          borderRadius: "50px 15px",
+          borderRadius: "40px 40px",
         }}
       >
         {/* // ! рестораны */}
         <CardActionArea>
           <CardMedia
-            sx={{
-              borderRadius: "15px",
-            }}
             component="img"
             width="100px"
             image="https://www.tokyo-city.ru/images/restorany/nevskiy71/foto017.jpg"
             alt="рестараны"
           />
-          <CardContent>
+          <CardContent className="fon">
             <Typography id="rests" gutterBottom variant="h5" component="div">
               РЕСТОРАН
             </Typography>
@@ -47,19 +44,18 @@ export default function HomeCard() {
         sx={{
           textAlign: "center",
           maxWidth: 445,
-          borderRadius: "15px 50px",
+          borderRadius: "40px 40px",
         }}
       >
         {/* // ! меню */}
         <CardActionArea>
           <CardMedia
-            sx={{ borderRadius: "15px" }}
             component="img"
             width="100px"
             image="https://prof.thebull.ru/wp-content/uploads/sites/10/2022/12/%D0%A2%D0%B0%D1%80%D0%A2%D0%B0%D1%80-28.09-3.jpg"
             alt="меню"
           />
-          <CardContent>
+          <CardContent className="fon">
             <Typography id="rests" gutterBottom variant="h5" component="div">
               МЕНЮ
             </Typography>

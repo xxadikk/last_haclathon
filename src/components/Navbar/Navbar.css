@@ -1,10 +1,8 @@
-
 * {
   font-family: "Cinzel", serif !important;
   padding: 0;
   margin: 0;
 }
-
 
 #appbar:hover {
   box-shadow: none;
@@ -12,21 +10,31 @@
 }
 
 #appbar {
-
-    background: -webkit-linear-gradient(90deg, #000000,#230b10,#331016,#230b10,#000000);
-background: linear-gradient(90deg, #000000,#230b10,#331016,#230b10,#000000);
-box-shadow: none;
-padding: 0;
-margin: 0;
+  background: -webkit-linear-gradient(
+    90deg,
+    #000000,
+    #230b10,
+    #331016,
+    #230b10,
+    #000000
+  );
+  background: linear-gradient(
+    90deg,
+    #000000,
+    #230b10,
+    #331016,
+    #230b10,
+    #000000
+  );
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
 }
 
 #start-container {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
-
-
-
 
 #block__link:hover {
   border-radius: 10px;
@@ -38,8 +46,7 @@ margin: 0;
   color: white;
   font-family: "Caveat", cursive !important;
 }
-#register_user{
-    text-decoration: none;
-    color: black;
+#register_user {
+  text-decoration: none;
+  color: black;
 }
-
