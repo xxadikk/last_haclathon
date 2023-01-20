@@ -22,7 +22,7 @@ export default function HomeCard() {
         sx={{
           textAlign: "center",
           maxWidth: 445,
-          borderRadius: "40px 40px",
+          borderRadius: "20px 20px",
         }}
       >
         {/* // ! рестораны */}
@@ -44,7 +44,7 @@ export default function HomeCard() {
         sx={{
           textAlign: "center",
           maxWidth: 445,
-          borderRadius: "40px 40px",
+          borderRadius: "20px 20px",
         }}
       >
         {/* // ! меню */}

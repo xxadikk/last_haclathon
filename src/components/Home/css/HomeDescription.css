@@ -1,12 +1,24 @@
 * {
   font-family: "Pattaya", sans-serif !important;
 }
-/* #de {
-  background-color: #472706;
-} */
+
 .description {
-  background: -webkit-linear-gradient(171deg, #121212, #181818);
-  background: linear-gradient(171deg, #121212, #181818);
+  background: -webkit-linear-gradient(
+    90deg,
+    #000000,
+    #230b10,
+    #331016,
+    #230b10,
+    #000000
+  );
+  background: linear-gradient(
+    90deg,
+    #000000,
+    #230b10,
+    #331016,
+    #230b10,
+    #000000
+  );
   color: white;
   margin-top: 50;
   width: 70%;
