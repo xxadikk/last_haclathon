@@ -1,11 +1,13 @@
-import React from 'react';
+import React from "react";
+import ProductCard from "../Products/ProductCard";
 
 const RestaurantsPage = () => {
-    return (
-        <div>
-            RestaurantsPage
-        </div>
-    );
+  return (
+    <div>
+      RestaurantsPage
+      <ProductCard />
+    </div>
+  );
 };
 
 export default RestaurantsPage;
