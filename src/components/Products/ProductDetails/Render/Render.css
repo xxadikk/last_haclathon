@@ -1,0 +1,26 @@
+#ren {
+  padding-left: 3%;
+}
+#plus {
+  font-size: 150%;
+}
+@media all and (max-width: 768px) {
+  #plus {
+    font-size: 140%;
+  }
+}
+@media all and (max-width: 450px) {
+  #plus {
+    font-size: 90%;
+  }
+}
+@media all and (max-width: 380px) {
+  #plus {
+    font-size: 80%;
+  }
+}
+@media all and (max-width: 320px) {
+  #plus {
+    font-size: 70%;
+  }
+}

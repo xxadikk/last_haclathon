@@ -1,0 +1,229 @@
+#text1 {
+  font-family: "PT Serif", serif !important;
+  padding-left: 5%;
+}
+#name {
+  font-family: "PT Serif", serif !important;
+}
+
+#par {
+  font-family: "PT Serif", serif !important;
+  font-size: 100%;
+  padding-top: 10%;
+}
+
+#blog {
+  padding: 5px;
+  border-radius: 1%;
+  position: relative;
+  border: 1px solid #000;
+}
+
+#reting {
+  padding-top: 10%;
+}
+#back {
+  display: flex;
+  justify-content: space-between;
+}
+
+#bacc {
+  display: flex;
+}
+
+#lop1 {
+  padding-top: 8px;
+}
+
+#prices {
+  font-family: "PT Serif", serif !important;
+  display: flex;
+  color: rgb(162, 2, 2);
+}
+
+#price-blog {
+  padding-top: 10%;
+  display: flex;
+}
+
+#but {
+  display: flex;
+  padding-top: 10%;
+  gap: 5%;
+}
+#but1 {
+  font-family: "PT Serif", serif !important;
+  border-radius: 10%;
+  background-color: rgb(186, 17, 17);
+  color: white;
+  border: none;
+}
+#but2 {
+  border-radius: 10%;
+  font-family: "PT Serif", serif !important;
+  background-color: rgb(21, 21, 102);
+  color: white;
+  border: none;
+}
+
+#but1:hover {
+  background-color: rgb(40, 40, 40);
+}
+#but2:hover {
+  background-color: rgb(40, 40, 40);
+}
+@media all and (max-width: 2000px) {
+  #but1 {
+    width: 40%;
+    height: 20%;
+    font-size: 80%;
+  }
+  #but2 {
+    width: 40%;
+    height: 20%;
+    font-size: 80%;
+  }
+  #container {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+@media all and (max-width: 1450px) {
+  #but1 {
+    width: 40%;
+    font-size: 80%;
+  }
+  #but2 {
+    width: 40%;
+    font-size: 80%;
+  }
+  #container {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+@media all and (max-width: 1024px) {
+  #but1 {
+    width: 40%;
+    height: 20%;
+    font-size: 80%;
+  }
+  #but2 {
+    width: 40%;
+    height: 20%;
+    font-size: 80%;
+  }
+  #container {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+@media all and (max-width: 768px) {
+  #but1 {
+    width: 60%;
+    height: 20%;
+    font-size: 80%;
+  }
+  #but2 {
+    width: 60%;
+    height: 20%;
+    font-size: 80%;
+  }
+  #text1 {
+    font-size: 90%;
+  }
+  #par {
+    font-size: 90%;
+  }
+  #container {
+    display: flex;
+    justify-content: space-between;
+  }
+  #lop1 {
+    font-size: 120%;
+  }
+  #lop2 {
+    font-size: 120%;
+  }
+  #lop3 {
+    font-size: 120%;
+  }
+}
+@media all and (max-width: 450px) {
+  #but1 {
+    width: 50%;
+    height: 10%;
+    font-size: 70%;
+  }
+  #but2 {
+    width: 50%;
+    height: 10%;
+    font-size: 70%;
+  }
+  #text1 {
+    font-size: 60%;
+    padding-left: 3%;
+  }
+  #par {
+    font-size: 70%;
+  }
+  #reting {
+    font-size: 90%;
+  }
+  #lop1 {
+    font-size: 100%;
+  }
+  #lop2 {
+    font-size: 100%;
+  }
+  #lop3 {
+    font-size: 100%;
+  }
+}
+@media all and (max-width: 380px) {
+  #btn1 {
+    width: 450%;
+    height: 5%;
+    font-size: 60%;
+  }
+  #btn2 {
+    width: 60%;
+    height: 20%;
+    font-size: 60%;
+  }
+  #text1 {
+    font-size: 50%;
+    padding-left: 2%;
+  }
+  #par {
+    font-size: 60%;
+  }
+}
+@media all and (max-width: 320px) {
+  #btn1 {
+    width: 60%;
+    height: 20%;
+    font-size: 30%;
+  }
+  #btn2 {
+    width: 10%;
+    height: 10%;
+    font-size: 40%;
+  }
+  #text1 {
+    font-size: 45%;
+    padding-left: 1%;
+  }
+  #par {
+    font-size: 55%;
+  }
+  #lop1 {
+    font-size: 90%;
+  }
+  #lop2 {
+    font-size: 90%;
+  }
+  #lop3 {
+    font-size: 90%;
+  }
+}

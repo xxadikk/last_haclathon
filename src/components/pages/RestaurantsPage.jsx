@@ -1,14 +1,16 @@
-import React from 'react';
-// import RestaurantsCard from '../Restaurants/RestaurantsCard';
-import SideBar from '../Restaurants/SideBar';
+import React from "react";
+import Page from "../../Pages/Page";
+import ProductCard from "../Products/ProductCard/ProductCard";
+import ProductDetails from "../Products/ProductDetails/ProductDetails";
 
 const RestaurantsPage = () => {
-    return (
-        <div>
-            {/* <RestaurantsCard /> */}
-            <SideBar />
-        </div>
-    );
-}
+  return (
+    <div>
+      <Page />
+      {/* <ProductCard />
+      <ProductDetails /> */}
+    </div>
+  );
+};
 
 export default RestaurantsPage;
