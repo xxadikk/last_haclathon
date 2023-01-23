@@ -7,6 +7,7 @@ import StepContent from "@mui/material/StepContent";
 import Button from "@mui/material/Button";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
+import "../Home/css/HomeStepr.css";
 
 const steps = [
   {
@@ -43,7 +44,13 @@ export default function HomeSteper() {
   };
 
   return (
-    <Box sx={{ display: "flex", justifyContent: "center", marginTop: "80px" }}>
+    <Box
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        marginTop: "80px",
+      }}
+    >
       <Box sx={{ maxWidth: 700 }}>
         <Stepper
           sx={{ display: "flex", justifyContent: "center" }}
@@ -51,17 +58,17 @@ export default function HomeSteper() {
           orientation="vertical"
         >
           {steps.map((step, index) => (
-            <Step key={step.label}>
+            <Step sx={{ color: "white" }} key={step.label}>
               <StepLabel
                 optional={
                   index === 2 ? (
-                    <Typography variant="caption">
+                    <Typography sx={{ color: "white" }} variant="caption">
                       Было ли вам полезно ?
                     </Typography>
                   ) : null
                 }
               >
-                <span>{step.label}</span>
+                <span style={{ color: "white" }}>{step.label}</span>
               </StepLabel>
               <StepContent>
                 <Typography>{step.description}</Typography>
@@ -77,7 +84,7 @@ export default function HomeSteper() {
                     <Button
                       disabled={index === 0}
                       onClick={handleBack}
-                      sx={{ mt: 1, mr: 1 }}
+                      sx={{ mt: 1, mr: 1, color: "white" }}
                     >
                       назад
                     </Button>
@@ -88,13 +95,16 @@ export default function HomeSteper() {
           ))}
         </Stepper>
         {activeStep === steps.length && (
-          <Paper square elevation={0} sx={{ p: 3 }}>
+          <Paper id="zx" square elevation={0} sx={{ p: 3 }}>
             <Typography>
-              <a style={{ textDecoration: "none" }} href="tel:+996703783830">
+              <a
+                style={{ textDecoration: "none", color: "white" }}
+                href="tel:+996703783830"
+              >
                 ЗАБРОНИРОВАТЬ +996 (703) 78-38-30
               </a>
             </Typography>
-            <Button onClick={handleReset} sx={{ mt: 1, mr: 1 }}>
+            <Button onClick={handleReset} sx={{ mt: 1, mr: 1, color: "white" }}>
               Читать снова
             </Button>
           </Paper>

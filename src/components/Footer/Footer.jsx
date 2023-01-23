@@ -13,7 +13,9 @@ const Footer = () => {
     <div>
       <Box id="footer">
         <Box id="footer_text">
-          <Box onClick={() => navigate("/about")}>О нас</Box>
+          <Box sx={{ color: "white" }} onClick={() => navigate("/about")}>
+            О нас
+          </Box>
           <Box id="footer_text1">Часто задаваемые вопросы</Box>
           <a
             id="footer_text1"

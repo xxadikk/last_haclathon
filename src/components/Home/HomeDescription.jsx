@@ -6,10 +6,10 @@ const HomeDescription = () => {
   return (
     <Box>
       <Box
+        id="de"
         sx={{
           display: "flex",
           justifyContent: "center",
-          backgroundColor: "white",
         }}
       >
         <Box

@@ -1,14 +1,14 @@
 import React from 'react';
-import Restaurants from '../Restaurants/Restaurants';
+// import RestaurantsCard from '../Restaurants/RestaurantsCard';
 import SideBar from '../Restaurants/SideBar';
 
 const RestaurantsPage = () => {
     return (
         <div>
-            <Restaurants />
+            {/* <RestaurantsCard /> */}
             <SideBar />
         </div>
     );
-};
+}
 
 export default RestaurantsPage;

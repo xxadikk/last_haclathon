@@ -2,11 +2,11 @@ import { FormControl, FormControlLabel, FormLabel, Grid, InputAdornment, Paper, 
 import React, { useEffect, useState } from 'react';
 import SearchIcon from '@mui/icons-material/Search';
 import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
-import { useProducts } from '../context/restaurantsContext';
+import { useRestaurants } from '../context/restaurantsContext';
 
 const SideBar = () => {
     
-    const {fetchByParams} =useProducts();
+    const {fetchByParams} =useRestaurants();
     const [searchParams, setSearchParams] = useSearchParams()
 
     const [search,setSearch] = useState(searchParams.get("q") || "") 

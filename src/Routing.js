@@ -40,7 +40,7 @@ const Routing = () => {
       link: "/add",
       element: <AddRestaurants />,
       id: 5,
-    }
+    },
   ];
 
   return (

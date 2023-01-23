@@ -1,9 +1,10 @@
 * {
   font-family: "Pattaya", sans-serif !important;
 }
+
 .description {
   background: -webkit-linear-gradient(
-    198deg,
+    90deg,
     #000000,
     #230b10,
     #331016,
@@ -11,7 +12,7 @@
     #000000
   );
   background: linear-gradient(
-    198deg,
+    90deg,
     #000000,
     #230b10,
     #331016,
