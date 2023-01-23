@@ -12,7 +12,11 @@ const Footer = () => {
     <div>
       <Box id="footer">
         <Box id="footer_text">
-          <Box sx={{ color: "white" }} onClick={() => navigate("/about")}>
+          <Box
+            id="onas"
+            sx={{ color: "white" }}
+            onClick={() => navigate("/about")}
+          >
             О нас
           </Box>
           <Box id="footer_text1">Часто задаваемые вопросы</Box>
