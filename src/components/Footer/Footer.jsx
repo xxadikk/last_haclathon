@@ -7,6 +7,7 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+
   const navigate = useNavigate();
   return (
     <div>
