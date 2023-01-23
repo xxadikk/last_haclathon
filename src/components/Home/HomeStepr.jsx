@@ -68,10 +68,12 @@ export default function HomeSteper() {
                   ) : null
                 }
               >
-                <span style={{ color: "white" }}>{step.label}</span>
+                <span id="zag" style={{ color: "white" }}>
+                  {step.label}
+                </span>
               </StepLabel>
               <StepContent>
-                <Typography>{step.description}</Typography>
+                <Typography id="opas">{step.description}</Typography>
                 <Box sx={{ mb: 3 }}>
                   <div>
                     <Button
@@ -98,6 +100,7 @@ export default function HomeSteper() {
           <Paper id="zx" square elevation={0} sx={{ p: 3 }}>
             <Typography>
               <a
+                id="tel"
                 style={{ textDecoration: "none", color: "white" }}
                 href="tel:+996703783830"
               >

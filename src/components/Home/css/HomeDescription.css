@@ -30,6 +30,7 @@
 #rest {
   font-size: 100%;
   padding-top: 10px;
+  font-family: "Roboto Slab", serif !important;
 }
 
 #opis {
@@ -37,6 +38,7 @@
   text-align: center;
   margin: 0 0 10px 0;
   padding-top: 5px;
+  font-family: "Caveat", cursive !important;
 }
 
 /* ? odaptivka end */

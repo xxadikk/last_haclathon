@@ -12,6 +12,7 @@
 
 #zagol {
   font-size: 500%;
+  font-family: "Roboto Slab", serif !important;
 }
 
 #t001__uptitle {
@@ -19,6 +20,7 @@
   font-size: 20px;
   text-transform: uppercase;
   padding-bottom: 10px;
+  font-family: "Roboto Slab", serif !important;
 }
 #t001__descr {
   width: 80%;
@@ -26,6 +28,7 @@
   padding: 0 0 30px 0;
   color: #fff;
   display: flex;
+  font-family: "Caveat", cursive !important;
 }
 
 @media all and (max-width: 1024px) {
