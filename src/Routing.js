@@ -1,12 +1,13 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import AboutUs from "./components/pages/AboutUs";
+import Confirm from "./components/pages/Confirm";
 import HomePage from "./components/pages/HomePage";
 import Login from "./components/pages/Login";
 import Register from "./components/pages/Register";
 import RestaurantsPage from "./components/pages/RestaurantsPage";
 import AddRestaurants from "./components/Restaurants/AddRestaurants";
-  import RestaurantsCardPages from "../src/components/pages/RestaurantsCardPages"
+import RestaurantsCardPages from "../src/components/pages/RestaurantsCardPages";
 
 const Routing = () => {
   const PRIVAT_PAGES = [
@@ -38,14 +39,20 @@ const Routing = () => {
       id: 4,
     },
     {
-      link: "/add",
-      element: <AddRestaurants />,
+      link: "/confirm-page",
+      element: <Confirm />,
       id: 5,
     },
     {
+      link: "/add",
+      element: <AddRestaurants />,
+      id: 6,
+    },
+    {
       link: "/restourantsCard",
-      element: <RestaurantsCardPages />
-    }
+      element: <RestaurantsCardPages />,
+      id: 7,
+    },
   ];
 
   return (

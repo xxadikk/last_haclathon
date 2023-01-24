@@ -7,7 +7,7 @@ export const useAuth = () => useContext(authContext);
 const API = "http://35.185.69.40/account";
 
 const AuthContextProvider = ({ children }) => {
-  const [user, setUser] = useState("");
+  const [user, setUser] = useState(null);
 
   const [error, setError] = useState("");
 
@@ -15,16 +15,9 @@ const AuthContextProvider = ({ children }) => {
 
   async function register(formData) {
     try {
-      const token = JSON.parse(localStorage.getItem("token"));
-      const Authorization = `Bearer ${token.access}`;
-      const config = {
-        headers: {
-          Authorization,
-        },
-      };
-      const res = await axios.post(`${API}/register/`, formData, config);
+      const res = await axios.post(`${API}/register/`, formData);
       console.log(res);
-      //   navigate("/");
+      navigate("/confirm-page");
     } catch (error) {
       console.log(Object.values(error.response.data).flat());
       console.log(error);
@@ -32,11 +25,63 @@ const AuthContextProvider = ({ children }) => {
     }
   }
 
+  async function login(formData, email) {
+    try {
+      const res = await axios.post(`${API}/token/`, formData);
+      console.log(res);
+      localStorage.setItem("token", JSON.stringify(res.data));
+      localStorage.setItem("username", email);
+      checkAuth();
+    } catch (error) {
+      console.log(error.response.data.detail);
+      setError(error.response.data.detail);
+    }
+  }
+
+  async function checkAuth() {
+    let token = JSON.parse(localStorage.getItem("token"));
+    console.log(token);
+    try {
+      const Authorization = `Bearer ${token.access}`;
+
+      const res = await axios.post(
+        `${API}/token/refresh/`,
+        {
+          refresh: token.refresh,
+        },
+        {
+          headers: {
+            Authorization,
+          },
+        }
+      );
+      localStorage.setItem(
+        "token",
+        JSON.stringify({ refresh: token.refresh, access: res.data.access })
+      );
+      let username = localStorage.getItem("username");
+
+      setUser(username);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  function logout() {
+    localStorage.removeItem("token");
+    localStorage.removeItem("username");
+    setUser(null);
+    navigate("/login");
+  }
+
   const values = {
     user,
     error,
     setUser,
     register,
+    login,
+    checkAuth,
+    logout,
   };
   return <authContext.Provider value={values}>{children}</authContext.Provider>;
 };
