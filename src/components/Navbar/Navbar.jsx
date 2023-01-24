@@ -1,4 +1,4 @@
-import * as React from "react";
+import  React, { useEffect } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -7,8 +7,6 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
-import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import "../Navbar/Navbar.css";
@@ -17,8 +15,22 @@ import HomeIcon from "@mui/icons-material/Home";
 import StorefrontIcon from "@mui/icons-material/Storefront";
 import InfoIcon from "@mui/icons-material/Info";
 import MenuRegister from "./MenuRegister/MenuRegister";
+import { useAuth } from "../context/authContext";
 
 function Navbar() {
+
+
+  const { user, checkAuth, logout } = useAuth();
+
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      checkAuth();
+    }
+  }, []);
+
+  console.log(user)
+
+
   const navigate = useNavigate();
 
   const pages = [
@@ -188,7 +200,12 @@ function Navbar() {
                 </>
               ))}
             </Box>
-            <MenuRegister />
+            {typeof user === "string" ? (<>
+              <Typography>
+              {user}
+              </Typography>
+            </>): (null)}
+            <MenuRegister logout = {logout} user = {user} />
           </Toolbar>
         </Container>
       </AppBar>
