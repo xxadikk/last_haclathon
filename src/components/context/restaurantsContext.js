@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { createContext, useContext } from "react";
+import React, { createContext, useContext, useReducer } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const restaurantsContext = createContext();
@@ -34,9 +34,10 @@ function reducer(state = INIT_STATE, action) {
   }
 }
 
-const API = "35.185.69.40/restaurant"
+const API = "http://35.185.69.40/"
 
 const RestaurantsContextProvider = ({ children }) => {
+  const [state, dispatch] = useReducer(reducer, INIT_STATE);
 
   const location = useLocation();
 const navigate=useNavigate()
@@ -44,13 +45,13 @@ const navigate=useNavigate()
 async function addProduct(newProduct) {
   try {
     const token = JSON.parse(localStorage.getItem("token"));
-    const Authorization = `Bearer ${token.access}`; // ? запись-ключ для добавления
-    const config = {
-      headers: {
-        Authorization,
-      },
-    };
-    const res = await axios.post(`${API}/`, newProduct, config);
+      const Authorization = `Bearer ${token.access}`;
+      const config = {
+        headers: {
+          Authorization,
+        },
+      };
+    const res = await axios.post(`${API}restaurant/`, newProduct, config);
     console.log(res);
     // navigate("/products");
   } catch (error) {
