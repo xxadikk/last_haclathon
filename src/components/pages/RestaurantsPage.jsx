@@ -9,8 +9,8 @@ const RestaurantsPage = () => {
     <div>
       {/* <RestaurantsCard /> */}
       <Page />
-      {/* <ProductCard />
-      <ProductDetails /> */}
+      <ProductCard />
+      <ProductDetails />
     </div>
   );
 };
