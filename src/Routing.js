@@ -8,6 +8,7 @@ import Register from "./components/pages/Register";
 import RestaurantsPage from "./components/pages/RestaurantsPage";
 import AddRestaurants from "./components/Restaurants/AddRestaurants";
 import RestaurantsCardPages from "../src/components/pages/RestaurantsCardPages";
+import RestaurantsList from "../src/components/Restaurants/RestaurantsList"
 
 const Routing = () => {
   const PRIVAT_PAGES = [
