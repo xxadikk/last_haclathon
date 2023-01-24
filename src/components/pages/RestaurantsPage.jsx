@@ -1,14 +1,11 @@
 import React from "react";
 import Page from "../../Pages/Page";
-import ProductCard from "../Products/ProductCard/ProductCard";
-import ProductDetails from "../Products/ProductDetails/ProductDetails";
-
+import Restaurantslist from "../Restaurants/RestaurantsList"
 const RestaurantsPage = () => {
   return (
     <div>
-      <Page />
-      {/* <ProductCard />
-      <ProductDetails /> */}
+      {/* <Page /> */}
+     <Restaurantslist />
     </div>
   );
 };

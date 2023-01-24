@@ -1,6 +1,6 @@
 import { Button, TextField, Typography } from '@mui/material';
 import { Box } from '@mui/system';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRestaurants } from '../context/restaurantsContext';
 
 
@@ -11,6 +11,10 @@ const AddRestaurants = () => {
   // const { user } = useAuth();
   const { getCategories, categories, addProduct } = useRestaurants();
 
+  useEffect(() => {
+    getCategories();
+  }, []);
+
 
   const [product, setProduct] = useState({
     title: "",
@@ -18,6 +22,8 @@ const AddRestaurants = () => {
     raiting:"",
     category: "",
     work_time: "",
+    rating: "",
+    author:"",
 
   });
 
@@ -40,16 +46,14 @@ const AddRestaurants = () => {
     let newProduct = new FormData(); // FormData для загрузки файла с компьютера
     newProduct.append("title", product.title);
     newProduct.append("description", product.description);
-    newProduct.append("price", product.raiting);
+    newProduct.append("rating", product.rating);
     newProduct.append("cuisine", product.cuisine);
     newProduct.append("image", product.image);
     newProduct.append("work_time",product.work_time);
     newProduct.append("address",product.address);
     newProduct.append("author",product.author);
-
-
-
     addProduct(newProduct);
+   
   }
 
 
@@ -84,15 +88,7 @@ const AddRestaurants = () => {
             name="description"
             onChange={handleInp}
           />
-             <TextField
-            label="Rating"
-            fullWidth
-            variant="outlined"
-            sx={{ m: 1 }}
-            type="number"
-            name="raiting"
-            onChange={handleInp}  
-          />
+             <input type="number" name='rating' />
           <TextField
             label="author"
             fullWidth
@@ -101,7 +97,7 @@ const AddRestaurants = () => {
             name="author"
             onChange={handleInp}
           />
-          <input type="number" name="rating" />
+          {/* <input type="text" name="" /> */}
             <TextField
             label="cuisine"
             fullWidth
@@ -110,7 +106,7 @@ const AddRestaurants = () => {
             name="cuisine"
                 
           />
-          <input type="date" onChange={handleInp} />
+          <input type="date" name='work_time' onChange={handleInp} />
           <TextField
             label="Address"
             fullWidth
