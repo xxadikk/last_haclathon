@@ -9,9 +9,11 @@ import { Link, useNavigate } from "react-router-dom";
 import LoginIcon from "@mui/icons-material/Login";
 import "../MenuRegister/MenuRegister.css";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import { useAuth } from "../../context/authContext";
 
-export default function MenuRegister() {
+export default function MenuRegister({logout, user}) {
   const navigate = useNavigate();
+
 
   const settings = [
     {
@@ -38,6 +40,20 @@ export default function MenuRegister() {
     },
   ];
 
+  // const authUser = [
+  //   {
+  //   name: "Выйти",
+  //     link: "/",
+  //     icon: (
+  //       <ExitToAppIcon
+  //         onClick={() => navigate("/")}
+  //         sx={{ height: "15px", width: "15px", marginLeft: "5px" }}
+  //       />
+  //     ),
+  //     id: 1,
+  //   },
+  // ]
+
   const [state, setState] = React.useState({
     right: false,
   });
@@ -60,6 +76,26 @@ export default function MenuRegister() {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
+      {typeof user  === "string" ? (<>
+        
+        <ListItem key={1}  disablePadding>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "center",
+              alignItems: "center",
+              gap: "10px 10px 0 0",
+            }}
+          >
+            <Link id="menu-login"  to="/">
+              <ListItemText primary="Выйти"  onClick={logout} />
+
+            </Link>
+          </Box>
+        </ListItem>
+    
+      </>) : (<>
       {settings.map((text) => (
         <ListItem key={text.id} disablePadding>
           <Box
@@ -78,6 +114,7 @@ export default function MenuRegister() {
           </Box>
         </ListItem>
       ))}
+      </>)  }
     </Box>
   );
 

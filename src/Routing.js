@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import AboutUs from "./components/pages/AboutUs";
+import Confirm from "./components/pages/Confirm";
 import HomePage from "./components/pages/HomePage";
 import Login from "./components/pages/Login";
 import Register from "./components/pages/Register";
@@ -34,6 +35,11 @@ const Routing = () => {
       link: "/login",
       element: <Login />,
       id: 4,
+    },
+    {
+      link: "/confirm-page",
+      element: <Confirm />,
+      id: 5,
     },
   ];
 

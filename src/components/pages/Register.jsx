@@ -37,16 +37,17 @@ const  Register = () => {
       if(!email.trim() || !password.trim  || !passwordConfirm.trim() || !firstName.trim() || !lastName.trim() ){
           alert("Заполните поля")
           return;
+      }else{
+        let formData = new FormData()
+        formData.append("email", email)
+        formData.append("password", password)
+        formData.append("password_confirm", passwordConfirm)
+        formData.append("first_name", firstName)
+        formData.append("last_name", lastName)
+        formData.append("phone", phone)
+        register(formData)
       }
-      let formData = new FormData()
-      formData.append("email", email)
-      formData.append("password", password)
-      formData.append("password_confirm", passwordConfirm)
-      formData.append("first_name", firstName)
-      formData.append("last_name", lastName)
-      formData.append("phone", phone)
-      register(formData)
-      console.log('worked');
+     
   }
 
  
@@ -69,7 +70,7 @@ const  Register = () => {
           <Typography component="h1" variant="h5">
             Регистрация
           </Typography>
-          <Box component="form" noValidate  sx={{ mt: 3 }}>
+          <Box component="form"   sx={{ mt: 3 }}>
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
                 <TextField
@@ -123,7 +124,6 @@ const  Register = () => {
                   name="password"
                   label="Подтвердите пароль"
                   type="password"
-                  id="password"
                   value={passwordConfirm}
                   onChange={(e)=>setPasswordConfirm(e.target.value)}
                 />
@@ -146,7 +146,6 @@ const  Register = () => {
               </Grid>
             </Grid>
             <Button
-              type="submit"
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
