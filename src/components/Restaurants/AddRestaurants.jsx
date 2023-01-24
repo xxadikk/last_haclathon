@@ -41,9 +41,14 @@ const AddRestaurants = () => {
     newProduct.append("title", product.title);
     newProduct.append("description", product.description);
     newProduct.append("price", product.raiting);
-    newProduct.append("category", product.category);
+    newProduct.append("cuisine", product.cuisine);
     newProduct.append("image", product.image);
     newProduct.append("work_time",product.work_time);
+    newProduct.append("address",product.address);
+    newProduct.append("author",product.author);
+
+
+
     addProduct(newProduct);
   }
 
@@ -64,11 +69,11 @@ const AddRestaurants = () => {
           <Typography>Add new product</Typography>
           <input type="file" name="image" onChange={handleInp}/>
              <TextField
-            label="Title"
+            label="title"
             fullWidth
             variant="outlined"
             sx={{ m: 1 }}
-            name="Title"  
+            name="title"  
             onChange={handleInp}
           />
              <TextField
@@ -88,13 +93,21 @@ const AddRestaurants = () => {
             name="raiting"
             onChange={handleInp}  
           />
-          <input type="number" name="rating" />
-            <TextField
-            label="Cuisine"
+          <TextField
+            label="author"
             fullWidth
             variant="outlined"
             sx={{ m: 1 }}
-            name="Cuisine"
+            name="author"
+            onChange={handleInp}
+          />
+          <input type="number" name="rating" />
+            <TextField
+            label="cuisine"
+            fullWidth
+            variant="outlined"
+            sx={{ m: 1 }}
+            name="cuisine"
                 
           />
           <input type="date" onChange={handleInp} />
