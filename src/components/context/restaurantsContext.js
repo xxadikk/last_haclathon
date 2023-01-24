@@ -5,7 +5,6 @@ import { useLocation, useNavigate } from "react-router-dom";
 const restaurantsContext = createContext();
 export const useRestaurants = () => useContext(restaurantsContext);
 
-
 const INIT_STATE = {
   restaurants: [],
   pages: 0,
@@ -34,51 +33,47 @@ function reducer(state = INIT_STATE, action) {
   }
 }
 
-const API = "35.185.69.40/restaurant"
+const API = "35.185.69.40/restaurant";
 
 const RestaurantsContextProvider = ({ children }) => {
-
   const location = useLocation();
-const navigate=useNavigate()
+  const navigate = useNavigate();
 
-async function addProduct(newProduct) {
-  try {
-    const token = JSON.parse(localStorage.getItem("token"));
-    const Authorization = `Bearer ${token.access}`; // ? запись-ключ для добавления
-    const config = {
-      headers: {
-        Authorization,
-      },
-    };
-    const res = await axios.post(`${API}/`, newProduct, config);
-    console.log(res);
-    // navigate("/products");
-  } catch (error) {
-    console.log(error.response.data);
+  async function addProduct(newProduct) {
+    try {
+      const token = JSON.parse(localStorage.getItem("token"));
+      const Authorization = `Bearer ${token.access}`; // ? запись-ключ для добавления
+      const config = {
+        headers: {
+          Authorization,
+        },
+      };
+      const res = await axios.post(`${API}/`, newProduct, config);
+      console.log(res);
+      // navigate("/products");
+    } catch (error) {
+      console.log(error.response.data);
+    }
   }
-}
 
+  const fetchByParams = async (query, value) => {
+    const search = new URLSearchParams(location.search);
 
+    if (value == "all") {
+      search.delete(query);
+    } else {
+      search.set(query, value);
+    }
+    const url = `${location.pathname}?${search.toString()}`;
+    navigate(url);
+  };
 
+  let values = {
+    fetchByParams,
+    addProduct,
+  };
 
-    const fetchByParams = async (query, value) =>{
-        const search = new URLSearchParams(location.search);
-    
-        if(value == "all"){
-          search.delete(query);
-        }else{
-          search.set(query,value);
-        }
-        const url = `${location.pathname}?${search.toString()}`;
-        navigate(url)
-      }
-
-      let values={
-        fetchByParams,
-        addProduct,
-      }
-
-return (
+  return (
     <restaurantsContext.Provider value={values}>
       {children}
     </restaurantsContext.Provider>
