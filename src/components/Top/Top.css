@@ -1,12 +1,12 @@
 .circle {
   position: fixed;
   display: none;
-  bottom: 10px;
+  bottom: 70px;
   right: 5%;
   width: 10px;
   height: 10px;
   line-height: 75px;
-  border-radius: 50%;
+  border-radius: 30%;
   font-size: 17px;
   color: #fff;
   background: red;

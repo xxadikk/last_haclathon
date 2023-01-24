@@ -1,5 +1,6 @@
 import { Box, createTheme, Typography } from "@mui/material";
 import React from "react";
+import "../pages/AboutUs.css";
 
 const AboutUs = () => {
   const theme = createTheme({
@@ -15,12 +16,12 @@ const AboutUs = () => {
   return (
     <div>
       <div>
-        <Box>
+        <Box id="abo">
           <Box
             sx={{
               display: "flex",
               justifyContent: "center",
-              marginTop: "80px ",
+              paddingTop: "80px ",
             }}
           >
             <img
@@ -48,6 +49,7 @@ const AboutUs = () => {
             }}
           >
             <Typography
+              id="tap1"
               sx={{
                 maxWidth: "70%",
                 [theme.breakpoints.down("sm")]: {
@@ -79,21 +81,30 @@ const AboutUs = () => {
                 marginTop: "5%",
               }}
             >
-              <Box>
-                <img
-                  style={{ maxWidth: "90%", borderRadius: "20px" }}
-                  src="https://barashek.kg/wp-content/uploads/2022/08/photo_2022-06-25_18-54-29-600x600.jpg"
-                  alt="err"
-                />
-              </Box>
-
-              <Box>
-                <img
-                  style={{ maxWidth: "90%", borderRadius: "20px" }}
-                  src="https://barashek.kg/wp-content/uploads/2021/06/photo_2022-05-29_13-02-51-600x600.jpg"
-                  alt="err"
-                />
-              </Box>
+              <div>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    marginLeft: "10%",
+                    marginRight: "10%",
+                    gap: "10px",
+                  }}
+                >
+                  <Box>
+                    <img
+                      style={{ maxWidth: "100%", borderRadius: "20px" }}
+                      src="https://barashek.kg/wp-content/uploads/2021/06/photo_2022-05-29_13-02-51-600x600.jpg"
+                      alt="err"
+                    />
+                  </Box>
+                  <img
+                    style={{ maxWidth: "49%", borderRadius: "20px" }}
+                    src="https://barashek.kg/wp-content/uploads/2022/08/photo_2022-06-25_18-54-29-600x600.jpg"
+                    alt="err"
+                  />
+                </div>
+              </div>
             </Box>
           </div>
 
@@ -111,6 +122,7 @@ const AboutUs = () => {
               }}
             >
               <Typography
+                id="tap2"
                 sx={{
                   maxWidth: "80%",
                   textAlign: "center",
@@ -159,6 +171,7 @@ const AboutUs = () => {
               }}
             >
               <Typography
+                id="tap3"
                 sx={{
                   [theme.breakpoints.down("sm")]: {
                     fontSize: "0px",
@@ -196,47 +209,13 @@ const AboutUs = () => {
               sx={{
                 display: "flex",
                 width: "40%",
-                flexDirection: "column",
                 justifyContent: "center",
-                marginLeft: "50px",
-              }}
-            >
-              <img
-                style={{
-                  width: "65%",
-                  height: "60%",
-                }}
-                src="http://restopr.ru/wp-content/uploads/2015/09/svesvoi_sert2.jpg"
-                alt="his photo"
-              />
-              <Typography
-                sx={{
-                  width: "100%",
-                  marginTop: "5%",
-                  [theme.breakpoints.down("sm")]: {
-                    fontSize: "12px",
-                  },
-                }}
-              >
-                123456789
-              </Typography>
-            </Box>
-            <Box
-              sx={{
-                mb: "5%",
-                display: "flex",
-                justifyContent: "center",
-                mt: "5%",
-                ml: "30px",
-                [theme.breakpoints.down("md")]: {
-                  width: "40%",
-                  mb: "10%",
-                },
               }}
             >
               <img
                 style={{
                   width: "60%",
+                  paddingBottom: "10%",
                   display: "flex",
                   justifyContent: "center",
                 }}

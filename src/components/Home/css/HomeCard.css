@@ -3,12 +3,18 @@
   padding: 0;
 }
 #alfa {
-  background-color: white;
+  background: -webkit-linear-gradient(171deg, #121212, #181818);
+  background: linear-gradient(171deg, #121212, #181818);
   padding: 20px 0 0 0;
 }
 
 #rests {
   font-size: 200%;
+  color: white;
+  font-family: "Roboto Slab", serif !important;
+}
+.fon {
+  background-color: #7a0c0c;
 }
 
 @media all and (max-width: 500px) {

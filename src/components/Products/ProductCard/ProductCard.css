@@ -1,0 +1,32 @@
+#text_dep {
+  font-family: "PT Serif", serif !important;
+}
+#text {
+  font-family: "Roboto Slab", serif !important;
+}
+#one {
+  padding: 0;
+  background-color: black;
+}
+#card {
+  padding-top: 10%;
+  display: flex;
+  justify-content: space-evenly;
+  padding-bottom: 10%;
+}
+#line {
+  background-color: rgb(255, 255, 255);
+  width: 500px;
+  height: 1px;
+}
+#line2 {
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  height: 1px;
+}
+#insta {
+  padding-top: 3%;
+}
+#price {
+  font-family: "PT Serif", serif !important;
+}

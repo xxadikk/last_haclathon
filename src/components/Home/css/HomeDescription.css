@@ -1,9 +1,10 @@
 * {
   font-family: "Pattaya", sans-serif !important;
 }
+
 .description {
   background: -webkit-linear-gradient(
-    198deg,
+    90deg,
     #000000,
     #230b10,
     #331016,
@@ -11,7 +12,7 @@
     #000000
   );
   background: linear-gradient(
-    198deg,
+    90deg,
     #000000,
     #230b10,
     #331016,
@@ -29,6 +30,7 @@
 #rest {
   font-size: 100%;
   padding-top: 10px;
+  font-family: "Roboto Slab", serif !important;
 }
 
 #opis {
@@ -36,6 +38,7 @@
   text-align: center;
   margin: 0 0 10px 0;
   padding-top: 5px;
+  font-family: "Caveat", cursive !important;
 }
 
 /* ? odaptivka end */

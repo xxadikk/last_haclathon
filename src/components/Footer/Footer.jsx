@@ -7,12 +7,19 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+
   const navigate = useNavigate();
   return (
     <div>
       <Box id="footer">
         <Box id="footer_text">
-          <Box onClick={() => navigate("/about")}>О нас</Box>
+          <Box
+            id="onas"
+            sx={{ color: "white" }}
+            onClick={() => navigate("/about")}
+          >
+            О нас
+          </Box>
           <Box id="footer_text1">Часто задаваемые вопросы</Box>
           <a
             id="footer_text1"
