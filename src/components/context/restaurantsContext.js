@@ -41,34 +41,34 @@ const RestaurantsContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
 
   const location = useLocation();
-const navigate=useNavigate()
+  const navigate = useNavigate()
 
-async function getCategories() {
-  try {
-    const res = await axios(`${API}/category/list/`);
-    dispatch({ type: "GET_CATEGORIES", payload: res.data.results });
-  } catch (error) {
-    console.log(error);
+  async function getCategories() {
+    try {
+      const res = await axios(`${API}/category/list/`);
+      dispatch({ type: "GET_CATEGORIES", payload: res.data.results });
+    } catch (error) {
+      console.log(error);
+    }
   }
-}
 
-async function addProduct(newProduct) {
-  try {
-    const token = JSON.parse(localStorage.getItem("token"));
+  async function addProduct(newProduct) {
+    try {
+      const token = JSON.parse(localStorage.getItem("token"));
       const Authorization = `Bearer ${token.access}`;
       const config = {
         headers: {
           Authorization,
         },
       };
-    const res = await axios.post(`${API}restaurant/`, newProduct, config);
-    console.log(res);
-    navigate("/products");
+      const res = await axios.post(`${API}restaurant/`, newProduct, config);
+      console.log(res);
+      navigate("/products");
 
-  } catch (error) {
-    console.log(error.response.data);
+    } catch (error) {
+      console.log(error.response.data);
+    }
   }
-}
 
   // ! READ (отображение продуктов)
   async function getProducts() {
@@ -91,8 +91,8 @@ async function addProduct(newProduct) {
     }
   }
 
-   // ! DELETE (TOKEN)
-   async function deleteProduct(id) {
+  // ! DELETE (TOKEN)
+  async function deleteProduct(id) {
     try {
       const token = JSON.parse(localStorage.getItem("token"));
       const Authorization = `Bearer ${token.access}`;
@@ -106,6 +106,10 @@ async function addProduct(newProduct) {
     } catch (error) {
       console.log(error);
     }
+  }
+
+  async function editProduct(id, obj) {
+    await axios.patch(`${API}restaurant/${id}`, obj)
   }
 
   async function getOneRestaurants(id) {
@@ -126,30 +130,31 @@ async function addProduct(newProduct) {
   }
 
 
-    const fetchByParams = async (query, value) =>{
-        const search = new URLSearchParams(location.search);
-    
-        if(value == "all"){
-          search.delete(query);
-        }else{
-          search.set(query,value);
-        }
-        const url = `${location.pathname}?${search.toString()}`;
-        navigate(url)
-      }
+  const fetchByParams = async (query, value) => {
+    const search = new URLSearchParams(location.search);
 
-      let values={
-        fetchByParams,
-        addProduct,
-        getCategories,
-        getProducts,
-        restaurants: state.restaurants,
-        deleteProduct,
-        getOneRestaurants,
-        oneProduct: state.oneProduct,
-      }
+    if (value == "all") {
+      search.delete(query);
+    } else {
+      search.set(query, value);
+    }
+    const url = `${location.pathname}?${search.toString()}`;
+    navigate(url)
+  }
 
-return (
+  let values = {
+    fetchByParams,
+    addProduct,
+    getCategories,
+    getProducts,
+    restaurants: state.restaurants,
+    deleteProduct,
+    getOneRestaurants,
+    oneProduct: state.oneProduct,
+    editProduct
+  }
+
+  return (
     <restaurantsContext.Provider value={values}>
       {children}
     </restaurantsContext.Provider>
