@@ -8,10 +8,11 @@ import Register from "./components/pages/Register";
 import RestaurantsPage from "./components/pages/RestaurantsPage";
 import AddRestaurants from "./components/Restaurants/AddRestaurants";
 import RestaurantsCardPages from "../src/components/pages/RestaurantsCardPages";
-import RestaurantsList from "../src/components/Restaurants/RestaurantsList"
+import RestaurantsList from "../src/components/Restaurants/RestaurantsList";
 import RestaurantsDetails from "./components/Restaurants/RestaurantsDetails";
 import AddPost from "./components/Post/AddPost";
 import EditRest from "./components/Restaurants/EditRest";
+import ProductCard from "./components/pages/ProductCard/ProductCard";
 
 const Routing = () => {
   const PRIVAT_PAGES = [
@@ -68,10 +69,16 @@ const Routing = () => {
       id: 9,
     },
     {
+      link: "/card-men",
+      element: <ProductCard />,
+      id: 10,
+    },
+
+    {
       link: "/edit-post/:id",
       element: <EditRest />,
-      id: 10,
-    }
+      id: 11,
+    },
   ];
 
   return (
