@@ -106,7 +106,7 @@ const AddRestaurants = () => {
             name="cuisine"
                 
           />
-          <input type="date" name='work_time' onChange={handleInp} />
+          <input type="time" name='work_time' onChange={handleInp} />
           <TextField
             label="Address"
             fullWidth
