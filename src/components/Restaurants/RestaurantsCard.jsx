@@ -14,13 +14,19 @@ import ShareOutlinedIcon from "@mui/icons-material/ShareOutlined";
 import "../Restaurants/RestaurantsCard.css";
 import { useRestaurants } from "../context/restaurantsContext";
 import { useAuth } from "../context/authContext";
+import { useNavigate } from "react-router-dom";
 
 export default function ProductCard({ item }) {
   const { deleteProduct } = useRestaurants();
   const { user } = useAuth();
+
+  const navigate = useNavigate();
   return (
     <Box id="card">
-      <Card sx={{ maxWidth: "320px", borderRadius: "5% 5% 5% 5%" }}>
+      <Card
+        onClick={() => navigate(`/restaurant/${item.id}`)}
+        sx={{ maxWidth: "320px", borderRadius: "5% 5% 5% 5%" }}
+      >
         <CardActionArea>
           <Typography
             id="text"
@@ -67,7 +73,7 @@ export default function ProductCard({ item }) {
               }}
               gutterBottom
             >
-              {item.rating}
+              Рейтинг: {item.rating}
             </Typography>
             <Typography
               id="price"
@@ -79,7 +85,7 @@ export default function ProductCard({ item }) {
               }}
               gutterBottom
             >
-              {item.cuisine}
+              Кухня:{item.cuisine}
             </Typography>
             <Typography
               id="price"
@@ -91,7 +97,7 @@ export default function ProductCard({ item }) {
               }}
               gutterBottom
             >
-              {item.work_time}
+              Время работы: {item.work_time}
             </Typography>
             <Typography
               id="price"
@@ -103,7 +109,7 @@ export default function ProductCard({ item }) {
               }}
               gutterBottom
             >
-              {item.address}
+              Адрес: {item.address}
             </Typography>
           </CardContent>
 

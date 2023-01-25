@@ -1,31 +1,35 @@
-import { Box, Button, FormControl, InputLabel, MenuItem, Select, TextField, Typography } from '@mui/material';
-import axios from 'axios';
-import React, { useState } from 'react';
-import { useEffect } from 'react';
-import { usePost } from '../context/postContext';
+import {
+  Box,
+  Button,
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+  TextField,
+  Typography,
+} from "@mui/material";
+import axios from "axios";
+import React, { useState } from "react";
+import { useEffect } from "react";
+import { usePost } from "../context/postContext";
 
 const AddPost = () => {
   const { addProduct } = usePost();
-  const [data, setData] = useState([])
-  const API = "http://35.185.69.40/"
+  const [data, setData] = useState([]);
+  const API = "http://35.185.69.40/";
   async function getId() {
-    const res = await axios(
-      `${API}restaurant`
-    );
+    const res = await axios(`${API}restaurant`);
     setData(res.data.results);
     console.log(res.data.results);
   }
 
   async function getTest() {
-    const res = await axios(
-      `${API}post`
-    );
+    const res = await axios(`${API}post`);
     console.log(res);
   }
   useEffect(() => {
-    getId()
-  }, [])
-
+    getId();
+  }, []);
 
   const [product, setProduct] = useState({
     title: "",
@@ -34,8 +38,6 @@ const AddPost = () => {
     post_category: "",
     title_of_restourant: "",
     type: "",
-
-
   });
 
   const handleInp = (e) => {
@@ -63,7 +65,6 @@ const AddPost = () => {
     newProduct.append("type", product.type);
     newProduct.append("title_of_restourant", product.title_of_restourant);
     addProduct(newProduct);
-
   }
   return (
     <>
@@ -75,7 +76,7 @@ const AddPost = () => {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          marginTop: "70px"
+          marginTop: "70px",
         }}
       >
         <Typography>Add new product</Typography>
@@ -113,7 +114,6 @@ const AddPost = () => {
           onChange={handleInp}
         />
 
-
         <FormControl fullWidth>
           <InputLabel id="demo-simple-select-label">Age</InputLabel>
           <Select
@@ -121,15 +121,14 @@ const AddPost = () => {
             id="demo-simple-select"
             // value={age}
             label="Age"
-            name='title_of_restourant'
-
+            name="title_of_restourant"
             onChange={handleInp}
           >
             {data?.map((item) => (
-              <MenuItem key={item.id} value={item.id}>{item.title}</MenuItem>
+              <MenuItem key={item.id} value={item.id}>
+                {item.title}
+              </MenuItem>
             ))}
-
-
           </Select>
         </FormControl>
         <Button
