@@ -16,7 +16,7 @@ export default function ProductCard({ item }) {
   const { user } = useAuth();
 
   const navigate = useNavigate();
-//  console.log(item)
+  //  console.log(item)
   return (
     <Card sx={{ maxWidth: 345 }}>
       {item.image ? (
@@ -35,7 +35,7 @@ export default function ProductCard({ item }) {
         <Typography variant="caption" color="error">
           {item.author}
         </Typography>
-        
+
         <Typography variant="caption" color="blue">
           {item.rating}
         </Typography>
@@ -47,6 +47,7 @@ export default function ProductCard({ item }) {
             <Button size="small" onClick={() => deleteProduct(item.id)}>
               Delete
             </Button>
+            <Button onClick={() => navigate(`/edit-post/${item.id}`)}>EDIT</Button>
           </>
         ) : null}
 
