@@ -1,6 +1,6 @@
 import { Button, TextField, Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useRestaurants } from "../context/restaurantsContext";
 
 const API = "35.185.69.40/restaurant/";
@@ -9,12 +9,17 @@ const AddRestaurants = () => {
   // const { user } = useAuth();
   const { getCategories, categories, addProduct } = useRestaurants();
 
+  useEffect(() => {
+    getCategories();
+  }, []);
+
   const [product, setProduct] = useState({
     title: "",
     description: "",
-    raiting: "",
-    category: "",
+    categories: "",
     work_time: "",
+    rating: "",
+    author: "",
   });
 
   const handleInp = (e) => {
@@ -36,13 +41,13 @@ const AddRestaurants = () => {
     let newProduct = new FormData(); // FormData для загрузки файла с компьютера
     newProduct.append("title", product.title);
     newProduct.append("description", product.description);
-    newProduct.append("price", product.raiting);
+    newProduct.append("rating", product.rating);
     newProduct.append("cuisine", product.cuisine);
     newProduct.append("image", product.image);
+
     newProduct.append("work_time", product.work_time);
     newProduct.append("address", product.address);
     newProduct.append("author", product.author);
-
     addProduct(newProduct);
   }
 
@@ -56,67 +61,60 @@ const AddRestaurants = () => {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          paddingBottom: "10%",
-          paddingTop: "10%",
+          paddingBottom: "5%",
+          paddingTop: "5%",
         }}
       >
         <Typography>Add new product</Typography>
-        <input
+        <TextField
           style={{ width: "36%" }}
           type="file"
           name="image"
           onChange={handleInp}
         />
         <TextField
-          id="textInp"
           label="title"
-          // fullWidth
           variant="outlined"
           sx={{ m: 1 }}
           name="title"
           onChange={handleInp}
         />
         <TextField
-          id="textInp"
           label="Description"
-          // fullWidth
           variant="outlined"
           sx={{ m: 1 }}
           name="description"
           onChange={handleInp}
         />
         <TextField
-          id="textInp"
-          label="Rating"
-          // fullWidth
-          variant="outlined"
-          sx={{ m: 1 }}
-          type="number"
-          name="raiting"
-          onChange={handleInp}
-        />
-        <TextField
-          id="textInp"
           label="author"
-          // fullWidth
           variant="outlined"
           sx={{ m: 1 }}
           name="author"
           onChange={handleInp}
         />
+        {/* <input type="num" /> */}
         <TextField
-          id="textInp"
+          style={{ width: "35.5%" }}
+          label="rating"
+          type="number"
+          name="work_time"
+          onChange={handleInp}
+        />
+        <TextField
           label="cuisine"
-          // fullWidth
           variant="outlined"
           sx={{ m: 1 }}
           name="cuisine"
         />
-        <input style={{ width: "36%" }} type="date" onChange={handleInp} />
         <TextField
-          id="textInp"
+          style={{ width: "35.5%" }}
+          type="date"
+          name="work_time"
+          onChange={handleInp}
+        />
+        <TextField
           label="Address"
-          // fullWidth
           variant="outlined"
           sx={{ m: 1 }}
           name="address"
@@ -126,7 +124,6 @@ const AddRestaurants = () => {
         <Button
           sx={{ m: 1 }}
           variant="outlined"
-          // fullWidth
           size="large"
           onClick={handleSave}
         >

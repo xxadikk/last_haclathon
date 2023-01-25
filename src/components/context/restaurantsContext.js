@@ -41,6 +41,15 @@ const RestaurantsContextProvider = ({ children }) => {
   const location = useLocation();
   const navigate = useNavigate();
 
+  async function getCategories() {
+    try {
+      const res = await axios(`${API}/category/list/`);
+      dispatch({ type: "GET_CATEGORIES", payload: res.data.results });
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   async function addProduct(newProduct) {
     try {
       const token = JSON.parse(localStorage.getItem("token"));
@@ -53,9 +62,47 @@ const RestaurantsContextProvider = ({ children }) => {
 
       const res = await axios.post(`${API}restaurant/`, newProduct, config);
       console.log(res);
-      // navigate("/products");
+      navigate("/products");
     } catch (error) {
       console.log(error.response.data);
+    }
+  }
+
+  // ! READ (отображение продуктов)
+  async function getProducts() {
+    try {
+      const token = JSON.parse(localStorage.getItem("token"));
+      const Authorization = `Bearer ${token.access}`;
+      const config = {
+        headers: {
+          Authorization,
+        },
+      };
+      const res = await axios(
+        `${API}restaurant/${window.location.search}`,
+        config
+      );
+      dispatch({ type: "GET_PRODUCTS", payload: res.data });
+      // console.log(res);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  // ! DELETE (TOKEN)
+  async function deleteProduct(id) {
+    try {
+      const token = JSON.parse(localStorage.getItem("token"));
+      const Authorization = `Bearer ${token.access}`;
+      const config = {
+        headers: {
+          Authorization,
+        },
+      };
+      const res = await axios.delete(`${API}restaurant/${id}`, config);
+      getProducts();
+    } catch (error) {
+      console.log(error);
     }
   }
 
@@ -74,6 +121,10 @@ const RestaurantsContextProvider = ({ children }) => {
   let values = {
     fetchByParams,
     addProduct,
+    getCategories,
+    getProducts,
+    restaurants: state.restaurants,
+    deleteProduct,
   };
 
   return (

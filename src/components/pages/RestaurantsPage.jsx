@@ -1,16 +1,14 @@
 import React from "react";
 import Page from "../../Pages/Page";
-import ProductCard from "../Products/ProductCard/ProductCard";
-import ProductDetails from "../Products/ProductDetails/ProductDetails";
-import RestaurantsCard from "../Restaurants/RestaurantsCard";
 
+import Restaurantslist from "../Restaurants/RestaurantsList";
+import SideBar from "../Restaurants/SideBar";
 const RestaurantsPage = () => {
   return (
     <div>
-      {/* <RestaurantsCard /> */}
-      <Page />
-      <ProductCard />
-      <ProductDetails />
+      {/* <Page /> */}
+      {/* <SideBar /> */}
+      <Restaurantslist />
     </div>
   );
 };

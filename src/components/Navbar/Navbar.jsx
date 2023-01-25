@@ -1,4 +1,4 @@
-import  React, { useEffect } from "react";
+import React, { useEffect } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -18,8 +18,6 @@ import MenuRegister from "./MenuRegister/MenuRegister";
 import { useAuth } from "../context/authContext";
 
 function Navbar() {
-
-
   const { user, checkAuth, logout } = useAuth();
 
   useEffect(() => {
@@ -28,8 +26,7 @@ function Navbar() {
     }
   }, []);
 
-  console.log(user)
-
+  // console.log(user)
 
   const navigate = useNavigate();
 
@@ -200,12 +197,12 @@ function Navbar() {
                 </>
               ))}
             </Box>
-            {typeof user === "string" ? (<>
-              <Typography>
-              {user}
-              </Typography>
-            </>): (null)}
-            <MenuRegister logout = {logout} user = {user} />
+            {typeof user === "string" ? (
+              <>
+                <Typography>{user}</Typography>
+              </>
+            ) : null}
+            <MenuRegister logout={logout} user={user} />
           </Toolbar>
         </Container>
       </AppBar>

@@ -1,114 +1,217 @@
-import * as React from "react";
-import { styled } from "@mui/material/styles";
+import React from "react";
 import Card from "@mui/material/Card";
-import CardHeader from "@mui/material/CardHeader";
-import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
-import CardActions from "@mui/material/CardActions";
-import Collapse from "@mui/material/Collapse";
-import Avatar from "@mui/material/Avatar";
-import IconButton from "@mui/material/IconButton";
+import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { red } from "@mui/material/colors";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import ShareIcon from "@mui/icons-material/Share";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
+import { Box, Button, CardActionArea } from "@mui/material";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
+import SendIcon from "@mui/icons-material/Send";
+import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
+import DeleteIcon from "@mui/icons-material/Delete";
+import BorderColorIcon from "@mui/icons-material/BorderColor";
+import ShareOutlinedIcon from "@mui/icons-material/ShareOutlined";
+import "../Restaurants/RestaurantsCard.css";
+import { useRestaurants } from "../context/restaurantsContext";
+import { useAuth } from "../context/authContext";
 
-const ExpandMore = styled((props) => {
-  const { expand, ...other } = props;
-  return <IconButton {...other} />;
-})(({ theme, expand }) => ({
-  transform: !expand ? "rotate(0deg)" : "rotate(180deg)",
-  marginLeft: "auto",
-  transition: theme.transitions.create("transform", {
-    duration: theme.transitions.duration.shortest,
-  }),
-}));
-
-export default function RestaurantsCard() {
-  const [expanded, setExpanded] = React.useState(false);
-
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
-
+export default function ProductCard({ item }) {
+  const { deleteProduct } = useRestaurants();
+  const { user } = useAuth();
   return (
-    <Card sx={{ maxWidth: 345, paddingTop: "10%" }}>
-      <CardHeader
-        avatar={
-          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            R
-          </Avatar>
-        }
-        action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
-        }
-        title="Shrimp and Chorizo Paella"
-        subheader="September 14, 2016"
-      />
-      <CardMedia
-        component="img"
-        height="194"
-        image="https://studiomccormack.com/wp-content/uploads/2015/12/BJs-Sacramento-01-Entry.jpg"
-        alt="Paella dish"
-      />
-      <CardContent>
-        <Typography variant="body2" color="text.secondary">
-          This impressive paella is a perfect party dish and a fun meal to cook
-          together with your guests. Add 1 cup of frozen peas along with the
-          mussels, if you like.
-        </Typography>
-      </CardContent>
-      <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton>
-        <ExpandMore
-          expand={expanded}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="show more"
-        >
-          <ExpandMoreIcon />
-        </ExpandMore>
-      </CardActions>
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <CardContent>
-          <Typography paragraph>Method:</Typography>
-          <Typography paragraph>
-            Heat 1/2 cup of the broth in a pot until simmering, add saffron and
-            set aside for 10 minutes.
+    <Box id="card">
+      <Card sx={{ maxWidth: "320px", borderRadius: "5% 5% 5% 5%" }}>
+        <CardActionArea>
+          <Typography
+            id="text"
+            sx={{
+              margin: "0",
+              backgroundColor: "black",
+              color: "white",
+              display: "flex",
+              justifyContent: "center",
+              fontSize: "250%",
+            }}
+            gutterBottom
+            variant="h1"
+          >
+            {item.title}
           </Typography>
-          <Typography paragraph>
-            Heat oil in a (14- to 16-inch) paella pan or a large, deep skillet
-            over medium-high heat. Add chicken, shrimp and chorizo, and cook,
-            stirring occasionally until lightly browned, 6 to 8 minutes.
-            Transfer shrimp to a large plate and set aside, leaving chicken and
-            chorizo in the pan. Add pimentón, bay leaves, garlic, tomatoes,
-            onion, salt and pepper, and cook, stirring often until thickened and
-            fragrant, about 10 minutes. Add saffron broth and remaining 4 1/2
-            cups chicken broth; bring to a boil.
-          </Typography>
-          <Typography paragraph>
-            Add rice and stir very gently to distribute. Top with artichokes and
-            peppers, and cook without stirring, until most of the liquid is
-            absorbed, 15 to 18 minutes. Reduce heat to medium-low, add reserved
-            shrimp and mussels, tucking them down into the rice, and cook again
-            without stirring, until mussels have opened and rice is just tender,
-            5 to 7 minutes more. (Discard any mussels that don&apos;t open.)
-          </Typography>
-          <Typography>
-            Set aside off of the heat to let rest for 10 minutes, and then
-            serve.
-          </Typography>
-        </CardContent>
-      </Collapse>
-    </Card>
+          <div id="line"></div>
+          {item.image ? (
+            <CardMedia id="cardRest" image={item.image} alt={item.title} />
+          ) : (
+            <CardMedia />
+          )}
+          <div id="line"></div>
+          <CardContent id="one">
+            <Typography
+              id="text_dep"
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                fontSize: "130%",
+                color: "white",
+              }}
+              gutterBottom
+            >
+              {item.description}
+            </Typography>
+            <Typography
+              id="price"
+              sx={{
+                color: "white",
+                display: "flex",
+                justifyContent: "center",
+                margin: "0",
+              }}
+              gutterBottom
+            >
+              {item.rating}
+            </Typography>
+            <Typography
+              id="price"
+              sx={{
+                color: "white",
+                display: "flex",
+                justifyContent: "center",
+                margin: "0",
+              }}
+              gutterBottom
+            >
+              {item.cuisine}
+            </Typography>
+            <Typography
+              id="price"
+              sx={{
+                color: "white",
+                display: "flex",
+                justifyContent: "center",
+                margin: "0",
+              }}
+              gutterBottom
+            >
+              {item.work_time}
+            </Typography>
+            <Typography
+              id="price"
+              sx={{
+                color: "white",
+                display: "flex",
+                justifyContent: "center",
+                margin: "0",
+              }}
+              gutterBottom
+            >
+              {item.address}
+            </Typography>
+          </CardContent>
+
+          <div id="line2"></div>
+
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "space-between",
+              backgroundColor: "black",
+            }}
+          >
+            <Button size="small" onClick={() => deleteProduct(item.id)}>
+              <DeleteIcon />
+            </Button>
+            <Button>
+              <BorderColorIcon />
+            </Button>
+          </Box>
+        </CardActionArea>
+      </Card>
+    </Box>
   );
 }
+
+// import React from "react";
+// import Card from "@mui/material/Card";
+// import CardActions from "@mui/material/CardActions";
+// import CardContent from "@mui/material/CardContent";
+// import CardMedia from "@mui/material/CardMedia";
+// import Button from "@mui/material/Button";
+// import Typography from "@mui/material/Typography";
+// import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+// import FavoriteIcon from "@mui/icons-material/Favorite";
+// import { useNavigate } from "react-router-dom";
+// import { useRestaurants } from "../context/restaurantsContext";
+// import { useAuth } from "../context/authContext";
+// import "../Restaurants/RestaurantsCard.css";
+// import { Rating } from "@mui/material";
+
+// export default function ProductCard({ item }) {
+//   const { deleteProduct } = useRestaurants();
+//   const { user } = useAuth();
+
+//   const navigate = useNavigate();
+//   // console.log(item);
+//   return (
+//     <div
+//       style={{
+//         paddingTop: "20%",
+//         maxWidth: "100%",
+//         justifyContent: "center",
+//       }}
+//     >
+//       <div className="box_card">
+//         <Card id="samatik">
+//           {item.image ? (
+//             <CardMedia id="cardRest" image={item.image} alt={item.title} />
+//           ) : (
+//             <CardMedia />
+//           )}
+//           {/* <CardContent onClick={() => navigate(`/products/${item.id}`)}> */}
+//           <Typography gutterBottom variant="h5" component="div">
+//             {item.title}
+//           </Typography>
+//           <Typography variant="body2" color="text.secondary">
+//             {item.description}
+//           </Typography>
+//           <Typography variant="caption" color="error">
+//             {item.author}
+//           </Typography>
+//           <Rating variant="p" color="blue">
+//             {item.rating}
+//           </Rating>
+//           {/* </CardContent> */}
+//           <CardActions>
+//             {/* если пользователь является автором, то есть кнопка  */}
+//             {item.author ? (
+//               <>
+//                 <Button size="small" onClick={() => deleteProduct(item.id)}>
+//                   Delete
+//                 </Button>
+//               </>
+//             ) : null}
+
+//             {/* ! если пользователь лайкнул пост, то отобразится заполненное сердце */}
+//             {item.liked_by_user ? (
+//               <>
+//                 <FavoriteIcon
+//                   onClick={() => {
+//                     toggleLike(item.id);
+//                   }}
+//                 />
+//               </>
+//             ) : (
+//               <>
+//                 <FavoriteBorderIcon
+//                   onClick={() => {
+//                     toggleLike(item.id);
+//                   }}
+//                 />
+//               </>
+//             )}
+//             {/* кол-во лайков */}
+//             {item.likes}
+//           </CardActions>
+//         </Card>
+//       </div>
+//     </div>
+//   );
+// }
