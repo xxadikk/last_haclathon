@@ -12,7 +12,7 @@ const RestaurantsDetails = () => {
         console.log(oneProduct);
         return oneProduct ? (
           <>
-            <h2>{oneProduct.title}</h2>
+            {/* <h2>{oneProduct.title}</h2>
             <h2>{oneProduct.description}</h2>
             <h2>{oneProduct.price}</h2>
             <h2>{oneProduct.category.title}</h2>
@@ -20,7 +20,7 @@ const RestaurantsDetails = () => {
               <img src={oneProduct.image} width="250" height="250" alt="" />
             ) : (
               <h6>No images here</h6>
-            )}
+            )} */}
             <br />
       
             <h5>Reviews:</h5>
