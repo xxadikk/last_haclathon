@@ -9,6 +9,8 @@ import RestaurantsPage from "./components/pages/RestaurantsPage";
 import AddRestaurants from "./components/Restaurants/AddRestaurants";
 import RestaurantsCardPages from "../src/components/pages/RestaurantsCardPages";
 import RestaurantsList from "../src/components/Restaurants/RestaurantsList"
+import RestaurantsDetails from "./components/Restaurants/RestaurantsDetails";
+import AddPost from "./components/Post/AddPost";
 
 const Routing = () => {
   const PRIVAT_PAGES = [
@@ -54,6 +56,16 @@ const Routing = () => {
       element: <RestaurantsCardPages />,
       id: 7,
     },
+    {
+      link: "/restaurant/:id",
+      element: <RestaurantsDetails />,
+      id:8,
+    },
+    {
+      link: "/add-post",
+      element: <AddPost />,
+      id:9,
+    }
   ];
 
   return (

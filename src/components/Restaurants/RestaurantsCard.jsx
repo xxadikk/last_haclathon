@@ -16,7 +16,7 @@ export default function ProductCard({ item }) {
   const { user } = useAuth();
 
   const navigate = useNavigate();
- console.log(item)
+//  console.log(item)
   return (
     <Card sx={{ maxWidth: 345 }}>
       {item.image ? (
@@ -25,7 +25,7 @@ export default function ProductCard({ item }) {
         <CardMedia sx={{ height: 140 }} />
       )}
 
-      <CardContent onClick={() => navigate(`/products/${item.id}`)}>
+      <CardContent onClick={() => navigate(`/restaurant/${item.id}`)}>
         <Typography gutterBottom variant="h5" component="div">
           {item.title}
         </Typography>

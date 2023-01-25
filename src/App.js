@@ -1,5 +1,6 @@
 import React from "react";
 import AuthContextProvider from "./components/context/authContext";
+import PostContextProvaider from "./components/context/postContext";
 import RestaurantsContextProvider from "./components/context/restaurantsContext";
 import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Navbar/Navbar";
@@ -10,12 +11,15 @@ const App = () => {
   return (
     <>
       <AuthContextProvider>
-        <RestaurantsContextProvider>
+        <PostContextProvaider>
+                  <RestaurantsContextProvider>
         <Navbar />
         <Routing />
         <Footer />
         <Top />
         </RestaurantsContextProvider>
+        </PostContextProvaider>
+
       </AuthContextProvider>
     </>
   );
