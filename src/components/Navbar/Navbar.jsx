@@ -137,10 +137,13 @@ function Navbar() {
                 }}
               >
                 {pages.map((page) => (
-                  <MenuItem onClick={handleCloseNavMenu} id="burger-link">
+                  <MenuItem
+                    key={page.id}
+                    onClick={handleCloseNavMenu}
+                    id="burger-link"
+                  >
                     <Link
                       to={page.link}
-                      key={page.id}
                       style={{ textDecoration: "none", color: "black" }}
                     >
                       {page.name}
@@ -182,21 +185,21 @@ function Navbar() {
               }}
             >
               {pages.map((page) => (
-                <>
+                <div key={page.id}>
                   <MenuItem onClick={handleCloseNavMenu} id="block__link">
                     <Link
                       id="link"
                       to={page.link}
-                      key={page.id}
                       style={{ width: "100%", height: "100%" }}
                     >
                       {page.name}
                     </Link>
                     {page.icon}
                   </MenuItem>
-                </>
+                </div>
               ))}
             </Box>
+
             {typeof user === "string" ? (
               <>
                 <Typography>{user}</Typography>

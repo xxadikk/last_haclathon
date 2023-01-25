@@ -40,6 +40,7 @@ const RestaurantsContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
 
   const location = useLocation();
+
   const navigate = useNavigate();
 
   async function getCategories() {
@@ -107,6 +108,10 @@ const RestaurantsContextProvider = ({ children }) => {
     }
   }
 
+  async function editProduct(id, obj) {
+    await axios.patch(`${API}restaurant/${id}`, obj);
+  }
+
   async function getOneRestaurants(id) {
     try {
       const token = JSON.parse(localStorage.getItem("token"));
@@ -145,6 +150,7 @@ const RestaurantsContextProvider = ({ children }) => {
     deleteProduct,
     getOneRestaurants,
     oneProduct: state.oneProduct,
+    editProduct,
   };
 
   return (
