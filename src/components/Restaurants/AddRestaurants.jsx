@@ -67,13 +67,16 @@ const AddRestaurants = () => {
       >
         <Typography>Add new product</Typography>
         <TextField
-          style={{ width: "36%" }}
+          fullWidth
+          sx={{ m: 1 }}
+          variant="outlined"
           type="file"
           name="image"
           onChange={handleInp}
         />
         <TextField
           label="title"
+          fullWidth
           variant="outlined"
           sx={{ m: 1 }}
           name="title"
@@ -81,49 +84,56 @@ const AddRestaurants = () => {
         />
         <TextField
           label="Description"
+          fullWidth
           variant="outlined"
           sx={{ m: 1 }}
           name="description"
           onChange={handleInp}
         />
         <TextField
+          label="Rating"
+          fullWidth
+          variant="outlined"
+          sx={{ m: 1 }}
+          type="number"
+          name="rating"
+          onChange={handleInp}
+        />
+        <TextField
           label="author"
+          fullWidth
           variant="outlined"
           sx={{ m: 1 }}
           name="author"
           onChange={handleInp}
         />
-        {/* <input type="num" /> */}
-        <TextField
-          style={{ width: "35.5%" }}
-          label="rating"
-          type="number"
-          name="work_time"
-          onChange={handleInp}
-        />
         <TextField
           label="cuisine"
+          fullWidth
           variant="outlined"
           sx={{ m: 1 }}
           name="cuisine"
         />
         <TextField
-          style={{ width: "35.5%" }}
-          type="date"
+          fullWidth
+          variant="outlined"
+          sx={{ m: 1 }}
           name="work_time"
+          type="time"
           onChange={handleInp}
         />
         <TextField
           label="Address"
+          fullWidth
           variant="outlined"
           sx={{ m: 1 }}
           name="address"
           onChange={handleInp}
         />
-
         <Button
           sx={{ m: 1 }}
           variant="outlined"
+          fullWidth
           size="large"
           onClick={handleSave}
         >

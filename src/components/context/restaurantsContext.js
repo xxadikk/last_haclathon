@@ -9,11 +9,12 @@ const INIT_STATE = {
   restaurants: [],
   pages: 0,
   categories: [],
+  oneProduct: null,
 };
 
 function reducer(state = INIT_STATE, action) {
   switch (action.type) {
-    case "GET_PRODUCTS":
+    case "GET_RESTAURANT":
       return {
         ...state,
         restaurants: action.payload.results,
@@ -23,7 +24,7 @@ function reducer(state = INIT_STATE, action) {
         ...state,
         categories: action.payload,
       };
-    case "GET_ONE_PRODUCT":
+    case "GET_ONE_RESTAURANT":
       return {
         ...state,
         oneProduct: action.payload,
@@ -82,7 +83,7 @@ const RestaurantsContextProvider = ({ children }) => {
         `${API}restaurant/${window.location.search}`,
         config
       );
-      dispatch({ type: "GET_PRODUCTS", payload: res.data });
+      dispatch({ type: "GET_RESTAURANT", payload: res.data });
       // console.log(res);
     } catch (error) {
       console.log(error);
@@ -101,6 +102,23 @@ const RestaurantsContextProvider = ({ children }) => {
       };
       const res = await axios.delete(`${API}restaurant/${id}`, config);
       getProducts();
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async function getOneRestaurants(id) {
+    try {
+      const token = JSON.parse(localStorage.getItem("token"));
+      const Authorization = `Bearer ${token.access}`;
+      const config = {
+        headers: {
+          Authorization,
+        },
+      };
+      const res = await axios(`${API}restaurant/${id}/`, config);
+      // console.log(res);
+      dispatch({ type: "GET_ONE_RESTAURANT", payload: res.data });
     } catch (error) {
       console.log(error);
     }
@@ -125,6 +143,8 @@ const RestaurantsContextProvider = ({ children }) => {
     getProducts,
     restaurants: state.restaurants,
     deleteProduct,
+    getOneRestaurants,
+    oneProduct: state.oneProduct,
   };
 
   return (
