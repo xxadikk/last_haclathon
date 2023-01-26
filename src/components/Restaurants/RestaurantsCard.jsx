@@ -21,6 +21,7 @@ export default function ProductCard({ item }) {
   const { user } = useAuth();
 
   const navigate = useNavigate();
+
   return (
     <Box id="card">
       <Card
@@ -112,6 +113,7 @@ export default function ProductCard({ item }) {
               Адрес: {item.address}
             </Typography>
           </CardContent>
+
 
           <div id="line2"></div>
 

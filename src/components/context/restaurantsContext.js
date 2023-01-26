@@ -108,9 +108,23 @@ const RestaurantsContextProvider = ({ children }) => {
     }
   }
 
-  async function editProduct(id, obj) {
-    await axios.patch(`${API}restaurant/${id}`, obj);
-  }
+  const editProduct = async ( id, newObj) =>{
+    try {
+        const token = JSON.parse(localStorage.getItem('token'))
+        const Authorization = `Bearer ${token.access}`
+        const config = {
+            headers:{
+                Authorization,
+            }
+        }
+        const res = await axios.patch(`${API}resataurant/${id}/`,newObj,config)
+        console.log(res);
+        getProducts()
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 
   async function getOneRestaurants(id) {
     try {

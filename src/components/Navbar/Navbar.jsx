@@ -199,12 +199,13 @@ function Navbar() {
                 </div>
               ))}
             </Box>
-
-            {typeof user === "string" ? (
-              <>
-                <Typography>{user}</Typography>
-              </>
-            ) : null}
+            <Box onClick={()=> navigate("/add")}>admin</Box>
+            <Box onClick={()=> navigate("/add-post")} style={{color:"red"}}>post</Box>
+            {typeof user === "string" ? (<>
+              <Typography>
+                {user}
+              </Typography>
+            </>) : (null)}
             <MenuRegister logout={logout} user={user} />
           </Toolbar>
         </Container>

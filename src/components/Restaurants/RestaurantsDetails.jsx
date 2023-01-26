@@ -17,6 +17,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import BorderColorIcon from "@mui/icons-material/BorderColor";
 
 const RestaurantsDetails = () => {
+
   const { id } = useParams();
   const { oneProduct, getOneRestaurants } = useRestaurants();
   const [menu, setMenu] = useState([]);
@@ -140,6 +141,7 @@ const RestaurantsDetails = () => {
           </Card>
         </Box>
       ))}
+
       {/* {oneProduct.reviews.map((item) => (
         <div key={item.id}>
         <span>

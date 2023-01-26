@@ -7,7 +7,7 @@ const API = "35.185.69.40/restaurant/";
 
 const AddRestaurants = () => {
   // const { user } = useAuth();
-  const { getCategories, categories, addProduct } = useRestaurants();
+  const { getCategories,addProduct } = useRestaurants();
 
   useEffect(() => {
     getCategories();
@@ -137,6 +137,7 @@ const AddRestaurants = () => {
           size="large"
           onClick={handleSave}
         >
+
           Add product
         </Button>
       </Box>

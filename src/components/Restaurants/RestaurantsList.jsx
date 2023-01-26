@@ -1,13 +1,15 @@
 import { Box, Pagination, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { useRestaurants } from "../context/restaurantsContext";
 import RestaurantsCard from "./RestaurantsCard";
 
 const RestaurantsList = () => {
+
   const [currentPage, setCurrentPage] = useState(1);
   const [searchParams, setSearchParams] = useSearchParams();
   const { getProducts, restaurants, pages } = useRestaurants();
+  const navigate= useNavigate()
 
   useEffect(() => {
     getProducts();
@@ -37,7 +39,7 @@ const RestaurantsList = () => {
           }}
         >
           {restaurants.map((item) => (
-            <RestaurantsCard item={item} key={item.id} />
+            <RestaurantsCard onClick={() => navigate(`/restaurant/${item.id}`)} item={item} key={item.id} />
           ))}
         </Box>
         <Box>
