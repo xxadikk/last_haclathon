@@ -9,7 +9,7 @@ const API = "35.185.69.40/restaurant/"
 const AddRestaurants = () => {
 
   // const { user } = useAuth();
-  const { getCategories, categories, addProduct } = useRestaurants();
+  const { getCategories,addProduct } = useRestaurants();
 
   useEffect(() => {
     getCategories();
@@ -53,7 +53,6 @@ const AddRestaurants = () => {
     newProduct.append("address",product.address);
     newProduct.append("author",product.author);
     addProduct(newProduct);
-   
   }
 
 
@@ -103,7 +102,7 @@ const AddRestaurants = () => {
             fullWidth
             variant="outlined"
             sx={{ m: 1 }}
-            name="cuisine"
+            name="Cuisine"
                 
           />
           <input type="time" name='work_time' onChange={handleInp} />
