@@ -5,10 +5,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: Montserrat, sans-serif;
-  text-align: center;
 }
 
-input {
+#inp {
   margin-top: 1%;
   margin-left: 1%;
   font-family: Montserrat, sans-serif;
@@ -35,4 +34,5 @@ input {
 .App-payment {
   padding-top: 10%;
   padding-bottom: 5%;
+  text-align: center;
 }

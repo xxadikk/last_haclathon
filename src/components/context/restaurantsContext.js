@@ -5,12 +5,11 @@ import { useLocation, useNavigate } from "react-router-dom";
 const restaurantsContext = createContext();
 export const useRestaurants = () => useContext(restaurantsContext);
 
-
 const INIT_STATE = {
   restaurants: [],
   pages: 0,
   categories: [],
-  oneProduct: null
+  oneProduct: null,
 };
 
 function reducer(state = INIT_STATE, action) {
@@ -35,13 +34,14 @@ function reducer(state = INIT_STATE, action) {
   }
 }
 
-const API = "http://35.185.69.40/"
+const API = "http://35.185.69.40/";
 
 const RestaurantsContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
 
   const location = useLocation();
-  const navigate = useNavigate()
+
+  const navigate = useNavigate();
 
   async function getCategories() {
     try {
@@ -61,10 +61,10 @@ const RestaurantsContextProvider = ({ children }) => {
           Authorization,
         },
       };
+
       const res = await axios.post(`${API}restaurant/`, newProduct, config);
       console.log(res);
       navigate("/products");
-
     } catch (error) {
       console.log(error.response.data);
     }
@@ -125,6 +125,7 @@ const RestaurantsContextProvider = ({ children }) => {
     }
 }
 
+
   async function getOneRestaurants(id) {
     try {
       const token = JSON.parse(localStorage.getItem("token"));
@@ -142,7 +143,6 @@ const RestaurantsContextProvider = ({ children }) => {
     }
   }
 
-
   const fetchByParams = async (query, value) => {
     const search = new URLSearchParams(location.search);
 
@@ -152,8 +152,8 @@ const RestaurantsContextProvider = ({ children }) => {
       search.set(query, value);
     }
     const url = `${location.pathname}?${search.toString()}`;
-    navigate(url)
-  }
+    navigate(url);
+  };
 
   let values = {
     fetchByParams,
@@ -164,8 +164,8 @@ const RestaurantsContextProvider = ({ children }) => {
     deleteProduct,
     getOneRestaurants,
     oneProduct: state.oneProduct,
-    editProduct
-  }
+    editProduct,
+  };
 
   return (
     <restaurantsContext.Provider value={values}>

@@ -101,8 +101,6 @@ export default function ProductCard() {
             >
               <FavoriteBorderIcon sx={{ color: "white" }} />
               <ChatBubbleOutlineIcon sx={{ color: "white" }} />
-              {/* <SendIcon /> */}
-              <ShareOutlinedIcon sx={{ color: "white" }} />
             </Box>
             <BookmarkBorderIcon sx={{ color: "white" }} />
           </Box>

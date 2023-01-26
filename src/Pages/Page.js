@@ -72,6 +72,7 @@ export default class Page extends React.Component {
               {/* <small>Name on card:</small> */}
 
               <input
+                id="inp"
                 type="text"
                 name="name"
                 className="form-control"
@@ -86,6 +87,7 @@ export default class Page extends React.Component {
               {/* <small>Card Number:</small> */}
 
               <input
+                id="inp"
                 type="tel"
                 name="number"
                 className="form-control"
@@ -102,6 +104,7 @@ export default class Page extends React.Component {
               {/* <small>Expiration Date:</small> */}
 
               <input
+                id="inp"
                 type="tel"
                 name="expiry"
                 className="form-control"
@@ -116,6 +119,7 @@ export default class Page extends React.Component {
               {/* <small>CVC:</small> */}
 
               <input
+                id="inp"
                 type="tel"
                 name="cvc"
                 className="form-control"
@@ -126,7 +130,7 @@ export default class Page extends React.Component {
                 onFocus={this.handleInputFocus}
               />
             </div>
-            <input type="hidden" name="issuer" value={issuer} />
+            <input id="inp" type="hidden" name="issuer" value={issuer} />
             <div className="form-actions">
               <button id="ad">Submit</button>
             </div>

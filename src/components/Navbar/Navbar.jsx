@@ -18,8 +18,6 @@ import MenuRegister from "./MenuRegister/MenuRegister";
 import { useAuth } from "../context/authContext";
 
 function Navbar() {
-
-
   const { user, checkAuth, logout } = useAuth();
 
   useEffect(() => {
@@ -28,8 +26,7 @@ function Navbar() {
     }
   }, []);
 
-  console.log(user)
-
+  // console.log(user)
 
   const navigate = useNavigate();
 
@@ -140,10 +137,13 @@ function Navbar() {
                 }}
               >
                 {pages.map((page) => (
-                  <MenuItem key={page.id} onClick={handleCloseNavMenu} id="burger-link">
+                  <MenuItem
+                    key={page.id}
+                    onClick={handleCloseNavMenu}
+                    id="burger-link"
+                  >
                     <Link
                       to={page.link}
-
                       style={{ textDecoration: "none", color: "black" }}
                     >
                       {page.name}
@@ -190,7 +190,6 @@ function Navbar() {
                     <Link
                       id="link"
                       to={page.link}
-
                       style={{ width: "100%", height: "100%" }}
                     >
                       {page.name}
